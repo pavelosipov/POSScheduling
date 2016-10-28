@@ -1,0 +1,1175 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		21D2E0D81DC38A6100453C50 /* SODAccountRepositoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D2E0CC1DC38A6100453C50 /* SODAccountRepositoryTests.m */; };
+		21D2E0D91DC38A6100453C50 /* SODDropboxAuthenticatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D2E0CD1DC38A6100453C50 /* SODDropboxAuthenticatorTests.m */; };
+		21D2E0DA1DC38A6100453C50 /* SODDropboxHostTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D2E0CE1DC38A6100453C50 /* SODDropboxHostTests.m */; };
+		21D2E0DB1DC38A6100453C50 /* SODKeyedStoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D2E0D11DC38A6100453C50 /* SODKeyedStoreTests.m */; };
+		21D2E0DC1DC38A6100453C50 /* SODHostStub.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D2E0D51DC38A6100453C50 /* SODHostStub.m */; };
+		21D2E0DD1DC38A6100453C50 /* SODHTTPGatewayStub.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D2E0D71DC38A6100453C50 /* SODHTTPGatewayStub.m */; };
+		21D2E2161DC395CD00453C50 /* SODDropboxLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D2E1991DC395CD00453C50 /* SODDropboxLoginViewController.m */; };
+		21D2E2171DC395CD00453C50 /* SODLaunchErrorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D2E19C1DC395CD00453C50 /* SODLaunchErrorViewController.m */; };
+		21D2E2181DC395CD00453C50 /* SODLaunchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D2E19E1DC395CD00453C50 /* SODLaunchView.m */; };
+		21D2E2191DC395CD00453C50 /* SODLaunchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D2E1A01DC395CD00453C50 /* SODLaunchViewController.m */; };
+		21D2E21A1DC395CD00453C50 /* SODSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D2E1A31DC395CD00453C50 /* SODSettingsViewController.m */; };
+		21D2E21B1DC395CD00453C50 /* SODWelcomeComponent.mm in Sources */ = {isa = PBXBuildFile; fileRef = 21D2E1A61DC395CD00453C50 /* SODWelcomeComponent.mm */; };
+		21D2E21C1DC395CD00453C50 /* SODWelcomeViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 21D2E1A81DC395CD00453C50 /* SODWelcomeViewController.mm */; };
+		21D2E21D1DC395CD00453C50 /* SODBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D2E1AC1DC395CD00453C50 /* SODBaseNavigationController.m */; };
+		21D2E21E1DC395CD00453C50 /* SODAppController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D2E1AE1DC395CD00453C50 /* SODAppController.m */; };
+		21D2E21F1DC395CD00453C50 /* NSBundle+SODPresentation.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D2E1B11DC395CD00453C50 /* NSBundle+SODPresentation.m */; };
+		21D2E2201DC395CD00453C50 /* SODAppAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D2E1B51DC395CD00453C50 /* SODAppAssembly.m */; };
+		21D2E2211DC395CD00453C50 /* SODDropboxAccountAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D2E1B71DC395CD00453C50 /* SODDropboxAccountAssembly.m */; };
+		21D2E2221DC395CD00453C50 /* SODAccountInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D2E1BB1DC395CD00453C50 /* SODAccountInfo.m */; };
+		21D2E2231DC395CD00453C50 /* SODDropboxAccountInfoProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D2E1BE1DC395CD00453C50 /* SODDropboxAccountInfoProvider.m */; };
+		21D2E2241DC395CD00453C50 /* SODAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D2E1C11DC395CD00453C50 /* SODAccount.m */; };
+		21D2E2251DC395CD00453C50 /* SODAccountRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D2E1C31DC395CD00453C50 /* SODAccountRepository.m */; };
+		21D2E2261DC395CD00453C50 /* SODCredentials.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D2E1C51DC395CD00453C50 /* SODCredentials.m */; };
+		21D2E2271DC395CD00453C50 /* NSError+SODAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D2E1C81DC395CD00453C50 /* NSError+SODAuth.m */; };
+		21D2E2281DC395CD00453C50 /* SODDropboxAuthenticator.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D2E1CA1DC395CD00453C50 /* SODDropboxAuthenticator.m */; };
+		21D2E22A1DC395CD00453C50 /* SODDropboxHost.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D2E1CF1DC395CD00453C50 /* SODDropboxHost.m */; };
+		21D2E22B1DC395CD00453C50 /* SODDropboxRequests.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D2E1D11DC395CD00453C50 /* SODDropboxRequests.m */; };
+		21D2E22C1DC395CD00453C50 /* SODEnvironment.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D2E1D81DC395CD00453C50 /* SODEnvironment.m */; };
+		21D2E22D1DC395CD00453C50 /* SODEphemeralKeyedStoreBackend.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D2E1DC1DC395CD00453C50 /* SODEphemeralKeyedStoreBackend.m */; };
+		21D2E22E1DC395CD00453C50 /* SODFileKeyedStoreBackend.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D2E1DE1DC395CD00453C50 /* SODFileKeyedStoreBackend.m */; };
+		21D2E22F1DC395CD00453C50 /* SODKeychainKeyedStoreBackend.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D2E1E01DC395CD00453C50 /* SODKeychainKeyedStoreBackend.m */; };
+		21D2E2301DC395CD00453C50 /* SODUserDefaultsKeyedStoreBackend.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D2E1E31DC395CD00453C50 /* SODUserDefaultsKeyedStoreBackend.m */; };
+		21D2E2311DC395CD00453C50 /* SODKeyedStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D2E1E51DC395CD00453C50 /* SODKeyedStore.m */; };
+		21D2E2321DC395CD00453C50 /* NSError+SODHost.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D2E1E91DC395CD00453C50 /* NSError+SODHost.m */; };
+		21D2E2331DC395CD00453C50 /* SODHost.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D2E1EB1DC395CD00453C50 /* SODHost.m */; };
+		21D2E2341DC395CD00453C50 /* SODStaticHost.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D2E1ED1DC395CD00453C50 /* SODStaticHost.m */; };
+		21D2E2351DC395CD00453C50 /* SODNetworkMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D2E1F01DC395CD00453C50 /* SODNetworkMonitor.m */; };
+		21D2E2361DC395CD00453C50 /* SODNetworkStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D2E1F21DC395CD00453C50 /* SODNetworkStatus.m */; };
+		21D2E2371DC395CD00453C50 /* POSHTTPRequest+SOD.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D2E1F51DC395CD00453C50 /* POSHTTPRequest+SOD.m */; };
+		21D2E2381DC395CD00453C50 /* SODHTTPGET.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D2E1F71DC395CD00453C50 /* SODHTTPGET.m */; };
+		21D2E2391DC395CD00453C50 /* SODHTTPPOST.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D2E1F91DC395CD00453C50 /* SODHTTPPOST.m */; };
+		21D2E23A1DC395CD00453C50 /* NSError+SODTrackable.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D2E1FD1DC395CD00453C50 /* NSError+SODTrackable.m */; };
+		21D2E23B1DC395CD00453C50 /* NSError.strings in Resources */ = {isa = PBXBuildFile; fileRef = 21D2E1FE1DC395CD00453C50 /* NSError.strings */; };
+		21D2E23C1DC395CD00453C50 /* SODTrackableEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D2E2011DC395CD00453C50 /* SODTrackableEvent.m */; };
+		21D2E23D1DC395CD00453C50 /* SODAppTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D2E2051DC395CD00453C50 /* SODAppTracker.m */; };
+		21D2E23E1DC395CD00453C50 /* SODConsoleTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D2E2071DC395CD00453C50 /* SODConsoleTracker.m */; };
+		21D2E23F1DC395CD00453C50 /* SODLogging.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D2E2091DC395CD00453C50 /* SODLogging.m */; };
+		21D2E2401DC395CD00453C50 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D2E20B1DC395CD00453C50 /* main.m */; };
+		21D2E2411DC395CD00453C50 /* NSError.strings in Resources */ = {isa = PBXBuildFile; fileRef = 21D2E20C1DC395CD00453C50 /* NSError.strings */; };
+		21D2E2421DC395CD00453C50 /* SODAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D2E20E1DC395CD00453C50 /* SODAppDelegate.m */; };
+		21D2E2431DC395CD00453C50 /* NSString+SODInfrastructure.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D2E2111DC395CD00453C50 /* NSString+SODInfrastructure.m */; };
+		21D2E2441DC395CD00453C50 /* UIDevice+SODInfrastructure.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D2E2131DC395CD00453C50 /* UIDevice+SODInfrastructure.m */; };
+		21D2E2451DC395CD00453C50 /* UIViewController+SODInfrastructure.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D2E2151DC395CD00453C50 /* UIViewController+SODInfrastructure.m */; };
+		39BF944E3A9631F5821A4D02 /* libPods-SchedulableObjectDemoTests-Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6284B357A3BE0B59FB43C21E /* libPods-SchedulableObjectDemoTests-Tests.a */; };
+		D463E40375F8140479191B37 /* libPods-SchedulableObjectDemo-Dev.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 99C36E26957BBA268F13533A /* libPods-SchedulableObjectDemo-Dev.a */; };
+		E933A46D1D247F7B00DAC930 /* UIImage+Alpha.m in Sources */ = {isa = PBXBuildFile; fileRef = E933A4311D247F7B00DAC930 /* UIImage+Alpha.m */; };
+		E933A46E1D247F7B00DAC930 /* UIImage+Color.m in Sources */ = {isa = PBXBuildFile; fileRef = E933A4331D247F7B00DAC930 /* UIImage+Color.m */; };
+		E933A46F1D247F7B00DAC930 /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = E933A4351D247F7B00DAC930 /* UIImage+Resize.m */; };
+		E933A4701D247F7B00DAC930 /* UIImage+RoundedCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = E933A4371D247F7B00DAC930 /* UIImage+RoundedCorner.m */; };
+		E9C0F5811BB09D390007E9DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9C0F4BA1BB09D380007E9DD /* Assets.xcassets */; };
+		E9C0F5821BB09D390007E9DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9C0F4BB1BB09D380007E9DD /* LaunchScreen.storyboard */; };
+		E9C0F5831BB09D390007E9DD /* NSError.strings in Resources */ = {isa = PBXBuildFile; fileRef = E9C0F4BD1BB09D380007E9DD /* NSError.strings */; };
+		E9C0F7021BB0A40D0007E9DD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9C0F7011BB0A40D0007E9DD /* QuartzCore.framework */; };
+		E9C0F7041BB0A4170007E9DD /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9C0F7031BB0A4170007E9DD /* Security.framework */; };
+		E9C0F7091BB0A7C10007E9DD /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E9C0F7081BB0A7C10007E9DD /* Localizable.strings */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		21D2E0CC1DC38A6100453C50 /* SODAccountRepositoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SODAccountRepositoryTests.m; sourceTree = "<group>"; };
+		21D2E0CD1DC38A6100453C50 /* SODDropboxAuthenticatorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SODDropboxAuthenticatorTests.m; sourceTree = "<group>"; };
+		21D2E0CE1DC38A6100453C50 /* SODDropboxHostTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SODDropboxHostTests.m; sourceTree = "<group>"; };
+		21D2E0D11DC38A6100453C50 /* SODKeyedStoreTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SODKeyedStoreTests.m; sourceTree = "<group>"; };
+		21D2E0D41DC38A6100453C50 /* SODHostStub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SODHostStub.h; sourceTree = "<group>"; };
+		21D2E0D51DC38A6100453C50 /* SODHostStub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SODHostStub.m; sourceTree = "<group>"; };
+		21D2E0D61DC38A6100453C50 /* SODHTTPGatewayStub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SODHTTPGatewayStub.h; sourceTree = "<group>"; };
+		21D2E0D71DC38A6100453C50 /* SODHTTPGatewayStub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SODHTTPGatewayStub.m; sourceTree = "<group>"; };
+		21D2E1981DC395CD00453C50 /* SODDropboxLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SODDropboxLoginViewController.h; sourceTree = "<group>"; };
+		21D2E1991DC395CD00453C50 /* SODDropboxLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SODDropboxLoginViewController.m; sourceTree = "<group>"; };
+		21D2E19B1DC395CD00453C50 /* SODLaunchErrorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SODLaunchErrorViewController.h; sourceTree = "<group>"; };
+		21D2E19C1DC395CD00453C50 /* SODLaunchErrorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SODLaunchErrorViewController.m; sourceTree = "<group>"; };
+		21D2E19D1DC395CD00453C50 /* SODLaunchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SODLaunchView.h; sourceTree = "<group>"; };
+		21D2E19E1DC395CD00453C50 /* SODLaunchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SODLaunchView.m; sourceTree = "<group>"; };
+		21D2E19F1DC395CD00453C50 /* SODLaunchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SODLaunchViewController.h; sourceTree = "<group>"; };
+		21D2E1A01DC395CD00453C50 /* SODLaunchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SODLaunchViewController.m; sourceTree = "<group>"; };
+		21D2E1A21DC395CD00453C50 /* SODSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SODSettingsViewController.h; sourceTree = "<group>"; };
+		21D2E1A31DC395CD00453C50 /* SODSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SODSettingsViewController.m; sourceTree = "<group>"; };
+		21D2E1A51DC395CD00453C50 /* SODWelcomeComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SODWelcomeComponent.h; sourceTree = "<group>"; };
+		21D2E1A61DC395CD00453C50 /* SODWelcomeComponent.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SODWelcomeComponent.mm; sourceTree = "<group>"; };
+		21D2E1A71DC395CD00453C50 /* SODWelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SODWelcomeViewController.h; sourceTree = "<group>"; };
+		21D2E1A81DC395CD00453C50 /* SODWelcomeViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SODWelcomeViewController.mm; sourceTree = "<group>"; };
+		21D2E1AB1DC395CD00453C50 /* SODBaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SODBaseNavigationController.h; sourceTree = "<group>"; };
+		21D2E1AC1DC395CD00453C50 /* SODBaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SODBaseNavigationController.m; sourceTree = "<group>"; };
+		21D2E1AD1DC395CD00453C50 /* SODAppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SODAppController.h; sourceTree = "<group>"; };
+		21D2E1AE1DC395CD00453C50 /* SODAppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SODAppController.m; sourceTree = "<group>"; };
+		21D2E1B01DC395CD00453C50 /* NSBundle+SODPresentation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+SODPresentation.h"; sourceTree = "<group>"; };
+		21D2E1B11DC395CD00453C50 /* NSBundle+SODPresentation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+SODPresentation.m"; sourceTree = "<group>"; };
+		21D2E1B31DC395CD00453C50 /* SODAccountAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SODAccountAssembly.h; sourceTree = "<group>"; };
+		21D2E1B41DC395CD00453C50 /* SODAppAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SODAppAssembly.h; sourceTree = "<group>"; };
+		21D2E1B51DC395CD00453C50 /* SODAppAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SODAppAssembly.m; sourceTree = "<group>"; };
+		21D2E1B61DC395CD00453C50 /* SODDropboxAccountAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SODDropboxAccountAssembly.h; sourceTree = "<group>"; };
+		21D2E1B71DC395CD00453C50 /* SODDropboxAccountAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SODDropboxAccountAssembly.m; sourceTree = "<group>"; };
+		21D2E1BA1DC395CD00453C50 /* SODAccountInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SODAccountInfo.h; sourceTree = "<group>"; };
+		21D2E1BB1DC395CD00453C50 /* SODAccountInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SODAccountInfo.m; sourceTree = "<group>"; };
+		21D2E1BC1DC395CD00453C50 /* SODAccountInfoProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SODAccountInfoProvider.h; sourceTree = "<group>"; };
+		21D2E1BD1DC395CD00453C50 /* SODDropboxAccountInfoProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SODDropboxAccountInfoProvider.h; sourceTree = "<group>"; };
+		21D2E1BE1DC395CD00453C50 /* SODDropboxAccountInfoProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SODDropboxAccountInfoProvider.m; sourceTree = "<group>"; };
+		21D2E1C01DC395CD00453C50 /* SODAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SODAccount.h; sourceTree = "<group>"; };
+		21D2E1C11DC395CD00453C50 /* SODAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SODAccount.m; sourceTree = "<group>"; };
+		21D2E1C21DC395CD00453C50 /* SODAccountRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SODAccountRepository.h; sourceTree = "<group>"; };
+		21D2E1C31DC395CD00453C50 /* SODAccountRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SODAccountRepository.m; sourceTree = "<group>"; };
+		21D2E1C41DC395CD00453C50 /* SODCredentials.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SODCredentials.h; sourceTree = "<group>"; };
+		21D2E1C51DC395CD00453C50 /* SODCredentials.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SODCredentials.m; sourceTree = "<group>"; };
+		21D2E1C71DC395CD00453C50 /* NSError+SODAuth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+SODAuth.h"; sourceTree = "<group>"; };
+		21D2E1C81DC395CD00453C50 /* NSError+SODAuth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+SODAuth.m"; sourceTree = "<group>"; };
+		21D2E1C91DC395CD00453C50 /* SODDropboxAuthenticator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SODDropboxAuthenticator.h; sourceTree = "<group>"; };
+		21D2E1CA1DC395CD00453C50 /* SODDropboxAuthenticator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SODDropboxAuthenticator.m; sourceTree = "<group>"; };
+		21D2E1CE1DC395CD00453C50 /* SODDropboxHost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SODDropboxHost.h; sourceTree = "<group>"; };
+		21D2E1CF1DC395CD00453C50 /* SODDropboxHost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SODDropboxHost.m; sourceTree = "<group>"; };
+		21D2E1D01DC395CD00453C50 /* SODDropboxRequests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SODDropboxRequests.h; sourceTree = "<group>"; };
+		21D2E1D11DC395CD00453C50 /* SODDropboxRequests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SODDropboxRequests.m; sourceTree = "<group>"; };
+		21D2E1D21DC395CD00453C50 /* SODCloudTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SODCloudTypes.h; sourceTree = "<group>"; };
+		21D2E1D51DC395CD00453C50 /* SODAppMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SODAppMonitor.h; sourceTree = "<group>"; };
+		21D2E1D71DC395CD00453C50 /* SODEnvironment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SODEnvironment.h; sourceTree = "<group>"; };
+		21D2E1D81DC395CD00453C50 /* SODEnvironment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SODEnvironment.m; sourceTree = "<group>"; };
+		21D2E1DB1DC395CD00453C50 /* SODEphemeralKeyedStoreBackend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SODEphemeralKeyedStoreBackend.h; sourceTree = "<group>"; };
+		21D2E1DC1DC395CD00453C50 /* SODEphemeralKeyedStoreBackend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SODEphemeralKeyedStoreBackend.m; sourceTree = "<group>"; };
+		21D2E1DD1DC395CD00453C50 /* SODFileKeyedStoreBackend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SODFileKeyedStoreBackend.h; sourceTree = "<group>"; };
+		21D2E1DE1DC395CD00453C50 /* SODFileKeyedStoreBackend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SODFileKeyedStoreBackend.m; sourceTree = "<group>"; };
+		21D2E1DF1DC395CD00453C50 /* SODKeychainKeyedStoreBackend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SODKeychainKeyedStoreBackend.h; sourceTree = "<group>"; };
+		21D2E1E01DC395CD00453C50 /* SODKeychainKeyedStoreBackend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SODKeychainKeyedStoreBackend.m; sourceTree = "<group>"; };
+		21D2E1E11DC395CD00453C50 /* SODKeyedStoreBackend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SODKeyedStoreBackend.h; sourceTree = "<group>"; };
+		21D2E1E21DC395CD00453C50 /* SODUserDefaultsKeyedStoreBackend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SODUserDefaultsKeyedStoreBackend.h; sourceTree = "<group>"; };
+		21D2E1E31DC395CD00453C50 /* SODUserDefaultsKeyedStoreBackend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SODUserDefaultsKeyedStoreBackend.m; sourceTree = "<group>"; };
+		21D2E1E41DC395CD00453C50 /* SODKeyedStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SODKeyedStore.h; sourceTree = "<group>"; };
+		21D2E1E51DC395CD00453C50 /* SODKeyedStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SODKeyedStore.m; sourceTree = "<group>"; };
+		21D2E1E81DC395CD00453C50 /* NSError+SODHost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+SODHost.h"; sourceTree = "<group>"; };
+		21D2E1E91DC395CD00453C50 /* NSError+SODHost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+SODHost.m"; sourceTree = "<group>"; };
+		21D2E1EA1DC395CD00453C50 /* SODHost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SODHost.h; sourceTree = "<group>"; };
+		21D2E1EB1DC395CD00453C50 /* SODHost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SODHost.m; sourceTree = "<group>"; };
+		21D2E1EC1DC395CD00453C50 /* SODStaticHost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SODStaticHost.h; sourceTree = "<group>"; };
+		21D2E1ED1DC395CD00453C50 /* SODStaticHost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SODStaticHost.m; sourceTree = "<group>"; };
+		21D2E1EF1DC395CD00453C50 /* SODNetworkMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SODNetworkMonitor.h; sourceTree = "<group>"; };
+		21D2E1F01DC395CD00453C50 /* SODNetworkMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SODNetworkMonitor.m; sourceTree = "<group>"; };
+		21D2E1F11DC395CD00453C50 /* SODNetworkStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SODNetworkStatus.h; sourceTree = "<group>"; };
+		21D2E1F21DC395CD00453C50 /* SODNetworkStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SODNetworkStatus.m; sourceTree = "<group>"; };
+		21D2E1F41DC395CD00453C50 /* POSHTTPRequest+SOD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "POSHTTPRequest+SOD.h"; sourceTree = "<group>"; };
+		21D2E1F51DC395CD00453C50 /* POSHTTPRequest+SOD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "POSHTTPRequest+SOD.m"; sourceTree = "<group>"; };
+		21D2E1F61DC395CD00453C50 /* SODHTTPGET.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SODHTTPGET.h; sourceTree = "<group>"; };
+		21D2E1F71DC395CD00453C50 /* SODHTTPGET.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SODHTTPGET.m; sourceTree = "<group>"; };
+		21D2E1F81DC395CD00453C50 /* SODHTTPPOST.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SODHTTPPOST.h; sourceTree = "<group>"; };
+		21D2E1F91DC395CD00453C50 /* SODHTTPPOST.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SODHTTPPOST.m; sourceTree = "<group>"; };
+		21D2E1FC1DC395CD00453C50 /* NSError+SODTrackable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+SODTrackable.h"; sourceTree = "<group>"; };
+		21D2E1FD1DC395CD00453C50 /* NSError+SODTrackable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+SODTrackable.m"; sourceTree = "<group>"; };
+		21D2E1FE1DC395CD00453C50 /* NSError.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = NSError.strings; sourceTree = "<group>"; };
+		21D2E2001DC395CD00453C50 /* SODTrackableEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SODTrackableEvent.h; sourceTree = "<group>"; };
+		21D2E2011DC395CD00453C50 /* SODTrackableEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SODTrackableEvent.m; sourceTree = "<group>"; };
+		21D2E2021DC395CD00453C50 /* SODTrackable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SODTrackable.h; sourceTree = "<group>"; };
+		21D2E2041DC395CD00453C50 /* SODAppTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SODAppTracker.h; sourceTree = "<group>"; };
+		21D2E2051DC395CD00453C50 /* SODAppTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SODAppTracker.m; sourceTree = "<group>"; };
+		21D2E2061DC395CD00453C50 /* SODConsoleTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SODConsoleTracker.h; sourceTree = "<group>"; };
+		21D2E2071DC395CD00453C50 /* SODConsoleTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SODConsoleTracker.m; sourceTree = "<group>"; };
+		21D2E2081DC395CD00453C50 /* SODLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SODLogging.h; sourceTree = "<group>"; };
+		21D2E2091DC395CD00453C50 /* SODLogging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SODLogging.m; sourceTree = "<group>"; };
+		21D2E20A1DC395CD00453C50 /* SODTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SODTracker.h; sourceTree = "<group>"; };
+		21D2E20B1DC395CD00453C50 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		21D2E20C1DC395CD00453C50 /* NSError.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = NSError.strings; sourceTree = "<group>"; };
+		21D2E20D1DC395CD00453C50 /* SODAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SODAppDelegate.h; sourceTree = "<group>"; };
+		21D2E20E1DC395CD00453C50 /* SODAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SODAppDelegate.m; sourceTree = "<group>"; };
+		21D2E2101DC395CD00453C50 /* NSString+SODInfrastructure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SODInfrastructure.h"; sourceTree = "<group>"; };
+		21D2E2111DC395CD00453C50 /* NSString+SODInfrastructure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SODInfrastructure.m"; sourceTree = "<group>"; };
+		21D2E2121DC395CD00453C50 /* UIDevice+SODInfrastructure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+SODInfrastructure.h"; sourceTree = "<group>"; };
+		21D2E2131DC395CD00453C50 /* UIDevice+SODInfrastructure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+SODInfrastructure.m"; sourceTree = "<group>"; };
+		21D2E2141DC395CD00453C50 /* UIViewController+SODInfrastructure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+SODInfrastructure.h"; sourceTree = "<group>"; };
+		21D2E2151DC395CD00453C50 /* UIViewController+SODInfrastructure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+SODInfrastructure.m"; sourceTree = "<group>"; };
+		5D658525D29702892CC570CD /* Pods-SchedulableObjectDemoTests-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SchedulableObjectDemoTests-Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SchedulableObjectDemoTests-Tests/Pods-SchedulableObjectDemoTests-Tests.release.xcconfig"; sourceTree = "<group>"; };
+		6284B357A3BE0B59FB43C21E /* libPods-SchedulableObjectDemoTests-Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SchedulableObjectDemoTests-Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D834556CBA2951DAF3C5E81 /* Pods-SchedulableObjectDemo-Dev.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SchedulableObjectDemo-Dev.release.xcconfig"; path = "Pods/Target Support Files/Pods-SchedulableObjectDemo-Dev/Pods-SchedulableObjectDemo-Dev.release.xcconfig"; sourceTree = "<group>"; };
+		99C36E26957BBA268F13533A /* libPods-SchedulableObjectDemo-Dev.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SchedulableObjectDemo-Dev.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E7A5B0C370A0047FBC6CA668 /* Pods-SchedulableObjectDemo-Dev.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SchedulableObjectDemo-Dev.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SchedulableObjectDemo-Dev/Pods-SchedulableObjectDemo-Dev.debug.xcconfig"; sourceTree = "<group>"; };
+		E933A4301D247F7B00DAC930 /* UIImage+Alpha.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Alpha.h"; sourceTree = "<group>"; };
+		E933A4311D247F7B00DAC930 /* UIImage+Alpha.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Alpha.m"; sourceTree = "<group>"; };
+		E933A4321D247F7B00DAC930 /* UIImage+Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Color.h"; sourceTree = "<group>"; };
+		E933A4331D247F7B00DAC930 /* UIImage+Color.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Color.m"; sourceTree = "<group>"; };
+		E933A4341D247F7B00DAC930 /* UIImage+Resize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Resize.h"; sourceTree = "<group>"; };
+		E933A4351D247F7B00DAC930 /* UIImage+Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resize.m"; sourceTree = "<group>"; };
+		E933A4361D247F7B00DAC930 /* UIImage+RoundedCorner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+RoundedCorner.h"; sourceTree = "<group>"; };
+		E933A4371D247F7B00DAC930 /* UIImage+RoundedCorner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RoundedCorner.m"; sourceTree = "<group>"; };
+		E9C0F48A1BB08D3C0007E9DD /* SchedulableObjectDemo-Dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SchedulableObjectDemo-Dev.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E9C0F4A31BB08D3C0007E9DD /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E9C0F4A91BB08D3C0007E9DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E9C0F4B31BB0924A0007E9DD /* Dev.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Dev.plist; sourceTree = "<group>"; };
+		E9C0F4BA1BB09D380007E9DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E9C0F4BB1BB09D380007E9DD /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E9C0F4BD1BB09D380007E9DD /* NSError.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = NSError.strings; sourceTree = "<group>"; };
+		E9C0F7011BB0A40D0007E9DD /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		E9C0F7031BB0A4170007E9DD /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		E9C0F7081BB0A7C10007E9DD /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		F7241F46F7DE437492CB7095 /* Pods-SchedulableObjectDemoTests-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SchedulableObjectDemoTests-Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SchedulableObjectDemoTests-Tests/Pods-SchedulableObjectDemoTests-Tests.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E9C0F4871BB08D3C0007E9DD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E9C0F7041BB0A4170007E9DD /* Security.framework in Frameworks */,
+				E9C0F7021BB0A40D0007E9DD /* QuartzCore.framework in Frameworks */,
+				D463E40375F8140479191B37 /* libPods-SchedulableObjectDemo-Dev.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E9C0F4A01BB08D3C0007E9DD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				39BF944E3A9631F5821A4D02 /* libPods-SchedulableObjectDemoTests-Tests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		21D2E0CA1DC38A6100453C50 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				21D2E0CB1DC38A6100453C50 /* Services */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		21D2E0CB1DC38A6100453C50 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				21D2E0CC1DC38A6100453C50 /* SODAccountRepositoryTests.m */,
+				21D2E0CD1DC38A6100453C50 /* SODDropboxAuthenticatorTests.m */,
+				21D2E0CE1DC38A6100453C50 /* SODDropboxHostTests.m */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		21D2E0CF1DC38A6100453C50 /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				21D2E0D01DC38A6100453C50 /* KeyedStores */,
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		21D2E0D01DC38A6100453C50 /* KeyedStores */ = {
+			isa = PBXGroup;
+			children = (
+				21D2E0D11DC38A6100453C50 /* SODKeyedStoreTests.m */,
+			);
+			path = KeyedStores;
+			sourceTree = "<group>";
+		};
+		21D2E0D21DC38A6100453C50 /* Stubs */ = {
+			isa = PBXGroup;
+			children = (
+				21D2E0D31DC38A6100453C50 /* Networking */,
+			);
+			path = Stubs;
+			sourceTree = "<group>";
+		};
+		21D2E0D31DC38A6100453C50 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				21D2E0D41DC38A6100453C50 /* SODHostStub.h */,
+				21D2E0D51DC38A6100453C50 /* SODHostStub.m */,
+				21D2E0D61DC38A6100453C50 /* SODHTTPGatewayStub.h */,
+				21D2E0D71DC38A6100453C50 /* SODHTTPGatewayStub.m */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		21D2E1931DC395CD00453C50 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				21D2E1941DC395CD00453C50 /* Application */,
+				21D2E1B21DC395CD00453C50 /* Assembly */,
+				21D2E1B81DC395CD00453C50 /* Domain */,
+				21D2E1D31DC395CD00453C50 /* Infrastructure */,
+				21D2E20B1DC395CD00453C50 /* main.m */,
+				21D2E20C1DC395CD00453C50 /* NSError.strings */,
+				21D2E20D1DC395CD00453C50 /* SODAppDelegate.h */,
+				21D2E20E1DC395CD00453C50 /* SODAppDelegate.m */,
+				21D2E20F1DC395CD00453C50 /* Utilities */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		21D2E1941DC395CD00453C50 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				21D2E1951DC395CD00453C50 /* Presentation */,
+				21D2E1AD1DC395CD00453C50 /* SODAppController.h */,
+				21D2E1AE1DC395CD00453C50 /* SODAppController.m */,
+				21D2E1AF1DC395CD00453C50 /* Utilities */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		21D2E1951DC395CD00453C50 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				21D2E1961DC395CD00453C50 /* Pages */,
+				21D2E1A91DC395CD00453C50 /* ViewControllers */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		21D2E1961DC395CD00453C50 /* Pages */ = {
+			isa = PBXGroup;
+			children = (
+				21D2E1971DC395CD00453C50 /* DropboxLoginPage */,
+				21D2E19A1DC395CD00453C50 /* LaunchPage */,
+				21D2E1A11DC395CD00453C50 /* SettingsPage */,
+				21D2E1A41DC395CD00453C50 /* WelcomePage */,
+			);
+			path = Pages;
+			sourceTree = "<group>";
+		};
+		21D2E1971DC395CD00453C50 /* DropboxLoginPage */ = {
+			isa = PBXGroup;
+			children = (
+				21D2E1981DC395CD00453C50 /* SODDropboxLoginViewController.h */,
+				21D2E1991DC395CD00453C50 /* SODDropboxLoginViewController.m */,
+			);
+			path = DropboxLoginPage;
+			sourceTree = "<group>";
+		};
+		21D2E19A1DC395CD00453C50 /* LaunchPage */ = {
+			isa = PBXGroup;
+			children = (
+				21D2E19B1DC395CD00453C50 /* SODLaunchErrorViewController.h */,
+				21D2E19C1DC395CD00453C50 /* SODLaunchErrorViewController.m */,
+				21D2E19D1DC395CD00453C50 /* SODLaunchView.h */,
+				21D2E19E1DC395CD00453C50 /* SODLaunchView.m */,
+				21D2E19F1DC395CD00453C50 /* SODLaunchViewController.h */,
+				21D2E1A01DC395CD00453C50 /* SODLaunchViewController.m */,
+			);
+			path = LaunchPage;
+			sourceTree = "<group>";
+		};
+		21D2E1A11DC395CD00453C50 /* SettingsPage */ = {
+			isa = PBXGroup;
+			children = (
+				21D2E1A21DC395CD00453C50 /* SODSettingsViewController.h */,
+				21D2E1A31DC395CD00453C50 /* SODSettingsViewController.m */,
+			);
+			path = SettingsPage;
+			sourceTree = "<group>";
+		};
+		21D2E1A41DC395CD00453C50 /* WelcomePage */ = {
+			isa = PBXGroup;
+			children = (
+				21D2E1A51DC395CD00453C50 /* SODWelcomeComponent.h */,
+				21D2E1A61DC395CD00453C50 /* SODWelcomeComponent.mm */,
+				21D2E1A71DC395CD00453C50 /* SODWelcomeViewController.h */,
+				21D2E1A81DC395CD00453C50 /* SODWelcomeViewController.mm */,
+			);
+			path = WelcomePage;
+			sourceTree = "<group>";
+		};
+		21D2E1A91DC395CD00453C50 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				21D2E1AA1DC395CD00453C50 /* BaseNavigationController */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		21D2E1AA1DC395CD00453C50 /* BaseNavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				21D2E1AB1DC395CD00453C50 /* SODBaseNavigationController.h */,
+				21D2E1AC1DC395CD00453C50 /* SODBaseNavigationController.m */,
+			);
+			path = BaseNavigationController;
+			sourceTree = "<group>";
+		};
+		21D2E1AF1DC395CD00453C50 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				21D2E1B01DC395CD00453C50 /* NSBundle+SODPresentation.h */,
+				21D2E1B11DC395CD00453C50 /* NSBundle+SODPresentation.m */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		21D2E1B21DC395CD00453C50 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				21D2E1B31DC395CD00453C50 /* SODAccountAssembly.h */,
+				21D2E1B41DC395CD00453C50 /* SODAppAssembly.h */,
+				21D2E1B51DC395CD00453C50 /* SODAppAssembly.m */,
+				21D2E1B61DC395CD00453C50 /* SODDropboxAccountAssembly.h */,
+				21D2E1B71DC395CD00453C50 /* SODDropboxAccountAssembly.m */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		21D2E1B81DC395CD00453C50 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				21D2E1B91DC395CD00453C50 /* AccountInfoProvider */,
+				21D2E1BF1DC395CD00453C50 /* AccountRepository */,
+				21D2E1C61DC395CD00453C50 /* Authenticator */,
+				21D2E1CD1DC395CD00453C50 /* Hosts */,
+				21D2E1D21DC395CD00453C50 /* SODCloudTypes.h */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		21D2E1B91DC395CD00453C50 /* AccountInfoProvider */ = {
+			isa = PBXGroup;
+			children = (
+				21D2E1BA1DC395CD00453C50 /* SODAccountInfo.h */,
+				21D2E1BB1DC395CD00453C50 /* SODAccountInfo.m */,
+				21D2E1BC1DC395CD00453C50 /* SODAccountInfoProvider.h */,
+				21D2E1BD1DC395CD00453C50 /* SODDropboxAccountInfoProvider.h */,
+				21D2E1BE1DC395CD00453C50 /* SODDropboxAccountInfoProvider.m */,
+			);
+			path = AccountInfoProvider;
+			sourceTree = "<group>";
+		};
+		21D2E1BF1DC395CD00453C50 /* AccountRepository */ = {
+			isa = PBXGroup;
+			children = (
+				21D2E1C01DC395CD00453C50 /* SODAccount.h */,
+				21D2E1C11DC395CD00453C50 /* SODAccount.m */,
+				21D2E1C21DC395CD00453C50 /* SODAccountRepository.h */,
+				21D2E1C31DC395CD00453C50 /* SODAccountRepository.m */,
+				21D2E1C41DC395CD00453C50 /* SODCredentials.h */,
+				21D2E1C51DC395CD00453C50 /* SODCredentials.m */,
+			);
+			path = AccountRepository;
+			sourceTree = "<group>";
+		};
+		21D2E1C61DC395CD00453C50 /* Authenticator */ = {
+			isa = PBXGroup;
+			children = (
+				21D2E1C71DC395CD00453C50 /* NSError+SODAuth.h */,
+				21D2E1C81DC395CD00453C50 /* NSError+SODAuth.m */,
+				21D2E1C91DC395CD00453C50 /* SODDropboxAuthenticator.h */,
+				21D2E1CA1DC395CD00453C50 /* SODDropboxAuthenticator.m */,
+			);
+			path = Authenticator;
+			sourceTree = "<group>";
+		};
+		21D2E1CD1DC395CD00453C50 /* Hosts */ = {
+			isa = PBXGroup;
+			children = (
+				21D2E1CE1DC395CD00453C50 /* SODDropboxHost.h */,
+				21D2E1CF1DC395CD00453C50 /* SODDropboxHost.m */,
+				21D2E1D01DC395CD00453C50 /* SODDropboxRequests.h */,
+				21D2E1D11DC395CD00453C50 /* SODDropboxRequests.m */,
+			);
+			path = Hosts;
+			sourceTree = "<group>";
+		};
+		21D2E1D31DC395CD00453C50 /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				21D2E1D41DC395CD00453C50 /* AppMonitor */,
+				21D2E1D61DC395CD00453C50 /* Environment */,
+				21D2E1D91DC395CD00453C50 /* KeyedStores */,
+				21D2E1E61DC395CD00453C50 /* Networking */,
+				21D2E1FA1DC395CD00453C50 /* Tracking */,
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		21D2E1D41DC395CD00453C50 /* AppMonitor */ = {
+			isa = PBXGroup;
+			children = (
+				21D2E1D51DC395CD00453C50 /* SODAppMonitor.h */,
+			);
+			path = AppMonitor;
+			sourceTree = "<group>";
+		};
+		21D2E1D61DC395CD00453C50 /* Environment */ = {
+			isa = PBXGroup;
+			children = (
+				21D2E1D71DC395CD00453C50 /* SODEnvironment.h */,
+				21D2E1D81DC395CD00453C50 /* SODEnvironment.m */,
+			);
+			path = Environment;
+			sourceTree = "<group>";
+		};
+		21D2E1D91DC395CD00453C50 /* KeyedStores */ = {
+			isa = PBXGroup;
+			children = (
+				21D2E1DA1DC395CD00453C50 /* Backends */,
+				21D2E1E41DC395CD00453C50 /* SODKeyedStore.h */,
+				21D2E1E51DC395CD00453C50 /* SODKeyedStore.m */,
+			);
+			path = KeyedStores;
+			sourceTree = "<group>";
+		};
+		21D2E1DA1DC395CD00453C50 /* Backends */ = {
+			isa = PBXGroup;
+			children = (
+				21D2E1DB1DC395CD00453C50 /* SODEphemeralKeyedStoreBackend.h */,
+				21D2E1DC1DC395CD00453C50 /* SODEphemeralKeyedStoreBackend.m */,
+				21D2E1DD1DC395CD00453C50 /* SODFileKeyedStoreBackend.h */,
+				21D2E1DE1DC395CD00453C50 /* SODFileKeyedStoreBackend.m */,
+				21D2E1DF1DC395CD00453C50 /* SODKeychainKeyedStoreBackend.h */,
+				21D2E1E01DC395CD00453C50 /* SODKeychainKeyedStoreBackend.m */,
+				21D2E1E11DC395CD00453C50 /* SODKeyedStoreBackend.h */,
+				21D2E1E21DC395CD00453C50 /* SODUserDefaultsKeyedStoreBackend.h */,
+				21D2E1E31DC395CD00453C50 /* SODUserDefaultsKeyedStoreBackend.m */,
+			);
+			path = Backends;
+			sourceTree = "<group>";
+		};
+		21D2E1E61DC395CD00453C50 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				21D2E1E71DC395CD00453C50 /* Hosts */,
+				21D2E1EE1DC395CD00453C50 /* NetworkMonitor */,
+				21D2E1F31DC395CD00453C50 /* Requests */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		21D2E1E71DC395CD00453C50 /* Hosts */ = {
+			isa = PBXGroup;
+			children = (
+				21D2E1E81DC395CD00453C50 /* NSError+SODHost.h */,
+				21D2E1E91DC395CD00453C50 /* NSError+SODHost.m */,
+				21D2E1EA1DC395CD00453C50 /* SODHost.h */,
+				21D2E1EB1DC395CD00453C50 /* SODHost.m */,
+				21D2E1EC1DC395CD00453C50 /* SODStaticHost.h */,
+				21D2E1ED1DC395CD00453C50 /* SODStaticHost.m */,
+			);
+			path = Hosts;
+			sourceTree = "<group>";
+		};
+		21D2E1EE1DC395CD00453C50 /* NetworkMonitor */ = {
+			isa = PBXGroup;
+			children = (
+				21D2E1EF1DC395CD00453C50 /* SODNetworkMonitor.h */,
+				21D2E1F01DC395CD00453C50 /* SODNetworkMonitor.m */,
+				21D2E1F11DC395CD00453C50 /* SODNetworkStatus.h */,
+				21D2E1F21DC395CD00453C50 /* SODNetworkStatus.m */,
+			);
+			path = NetworkMonitor;
+			sourceTree = "<group>";
+		};
+		21D2E1F31DC395CD00453C50 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				21D2E1F41DC395CD00453C50 /* POSHTTPRequest+SOD.h */,
+				21D2E1F51DC395CD00453C50 /* POSHTTPRequest+SOD.m */,
+				21D2E1F61DC395CD00453C50 /* SODHTTPGET.h */,
+				21D2E1F71DC395CD00453C50 /* SODHTTPGET.m */,
+				21D2E1F81DC395CD00453C50 /* SODHTTPPOST.h */,
+				21D2E1F91DC395CD00453C50 /* SODHTTPPOST.m */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		21D2E1FA1DC395CD00453C50 /* Tracking */ = {
+			isa = PBXGroup;
+			children = (
+				21D2E1FB1DC395CD00453C50 /* Errors */,
+				21D2E1FF1DC395CD00453C50 /* Events */,
+				21D2E2021DC395CD00453C50 /* SODTrackable.h */,
+				21D2E2031DC395CD00453C50 /* Trackers */,
+			);
+			path = Tracking;
+			sourceTree = "<group>";
+		};
+		21D2E1FB1DC395CD00453C50 /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				21D2E1FC1DC395CD00453C50 /* NSError+SODTrackable.h */,
+				21D2E1FD1DC395CD00453C50 /* NSError+SODTrackable.m */,
+				21D2E1FE1DC395CD00453C50 /* NSError.strings */,
+			);
+			path = Errors;
+			sourceTree = "<group>";
+		};
+		21D2E1FF1DC395CD00453C50 /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				21D2E2001DC395CD00453C50 /* SODTrackableEvent.h */,
+				21D2E2011DC395CD00453C50 /* SODTrackableEvent.m */,
+			);
+			path = Events;
+			sourceTree = "<group>";
+		};
+		21D2E2031DC395CD00453C50 /* Trackers */ = {
+			isa = PBXGroup;
+			children = (
+				21D2E2041DC395CD00453C50 /* SODAppTracker.h */,
+				21D2E2051DC395CD00453C50 /* SODAppTracker.m */,
+				21D2E2061DC395CD00453C50 /* SODConsoleTracker.h */,
+				21D2E2071DC395CD00453C50 /* SODConsoleTracker.m */,
+				21D2E2081DC395CD00453C50 /* SODLogging.h */,
+				21D2E2091DC395CD00453C50 /* SODLogging.m */,
+				21D2E20A1DC395CD00453C50 /* SODTracker.h */,
+			);
+			path = Trackers;
+			sourceTree = "<group>";
+		};
+		21D2E20F1DC395CD00453C50 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				21D2E2101DC395CD00453C50 /* NSString+SODInfrastructure.h */,
+				21D2E2111DC395CD00453C50 /* NSString+SODInfrastructure.m */,
+				21D2E2121DC395CD00453C50 /* UIDevice+SODInfrastructure.h */,
+				21D2E2131DC395CD00453C50 /* UIDevice+SODInfrastructure.m */,
+				21D2E2141DC395CD00453C50 /* UIViewController+SODInfrastructure.h */,
+				21D2E2151DC395CD00453C50 /* UIViewController+SODInfrastructure.m */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		44BD533A416AE9E155AB02BC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E7A5B0C370A0047FBC6CA668 /* Pods-SchedulableObjectDemo-Dev.debug.xcconfig */,
+				6D834556CBA2951DAF3C5E81 /* Pods-SchedulableObjectDemo-Dev.release.xcconfig */,
+				F7241F46F7DE437492CB7095 /* Pods-SchedulableObjectDemoTests-Tests.debug.xcconfig */,
+				5D658525D29702892CC570CD /* Pods-SchedulableObjectDemoTests-Tests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E933A3AF1D247F7A00DAC930 /* External */ = {
+			isa = PBXGroup;
+			children = (
+				E933A42F1D247F7B00DAC930 /* UIImageCategories */,
+			);
+			path = External;
+			sourceTree = "<group>";
+		};
+		E933A42F1D247F7B00DAC930 /* UIImageCategories */ = {
+			isa = PBXGroup;
+			children = (
+				E933A4301D247F7B00DAC930 /* UIImage+Alpha.h */,
+				E933A4311D247F7B00DAC930 /* UIImage+Alpha.m */,
+				E933A4321D247F7B00DAC930 /* UIImage+Color.h */,
+				E933A4331D247F7B00DAC930 /* UIImage+Color.m */,
+				E933A4341D247F7B00DAC930 /* UIImage+Resize.h */,
+				E933A4351D247F7B00DAC930 /* UIImage+Resize.m */,
+				E933A4361D247F7B00DAC930 /* UIImage+RoundedCorner.h */,
+				E933A4371D247F7B00DAC930 /* UIImage+RoundedCorner.m */,
+			);
+			path = UIImageCategories;
+			sourceTree = "<group>";
+		};
+		E9C0F4811BB08D3C0007E9DD = {
+			isa = PBXGroup;
+			children = (
+				E933A3AF1D247F7A00DAC930 /* External */,
+				E9C0F4B21BB0924A0007E9DD /* InfoPlists */,
+				E9C0F4B91BB09D380007E9DD /* Resources */,
+				21D2E1931DC395CD00453C50 /* Sources */,
+				E9C0F4A61BB08D3C0007E9DD /* Tests */,
+				E9C0F7051BB0A4300007E9DD /* Frameworks */,
+				E9C0F48B1BB08D3C0007E9DD /* Products */,
+				44BD533A416AE9E155AB02BC /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		E9C0F48B1BB08D3C0007E9DD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E9C0F48A1BB08D3C0007E9DD /* SchedulableObjectDemo-Dev.app */,
+				E9C0F4A31BB08D3C0007E9DD /* Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E9C0F4A61BB08D3C0007E9DD /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				21D2E0CA1DC38A6100453C50 /* Domain */,
+				21D2E0CF1DC38A6100453C50 /* Infrastructure */,
+				21D2E0D21DC38A6100453C50 /* Stubs */,
+				E9C0F4A91BB08D3C0007E9DD /* Info.plist */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		E9C0F4B21BB0924A0007E9DD /* InfoPlists */ = {
+			isa = PBXGroup;
+			children = (
+				E9C0F4B31BB0924A0007E9DD /* Dev.plist */,
+			);
+			path = InfoPlists;
+			sourceTree = "<group>";
+		};
+		E9C0F4B91BB09D380007E9DD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E9C0F4BA1BB09D380007E9DD /* Assets.xcassets */,
+				E9C0F4BB1BB09D380007E9DD /* LaunchScreen.storyboard */,
+				E9C0F4BC1BB09D380007E9DD /* Localization */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E9C0F4BC1BB09D380007E9DD /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				E9C0F7081BB0A7C10007E9DD /* Localizable.strings */,
+				E9C0F4BD1BB09D380007E9DD /* NSError.strings */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
+		E9C0F7051BB0A4300007E9DD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E9C0F7031BB0A4170007E9DD /* Security.framework */,
+				E9C0F7011BB0A40D0007E9DD /* QuartzCore.framework */,
+				99C36E26957BBA268F13533A /* libPods-SchedulableObjectDemo-Dev.a */,
+				6284B357A3BE0B59FB43C21E /* libPods-SchedulableObjectDemoTests-Tests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E9C0F4891BB08D3C0007E9DD /* Dev */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E9C0F4AC1BB08D3C0007E9DD /* Build configuration list for PBXNativeTarget "Dev" */;
+			buildPhases = (
+				E8DD6677BC5FC9E2F4C2B7F1 /* [CP] Check Pods Manifest.lock */,
+				E9C0F4861BB08D3C0007E9DD /* Sources */,
+				E9C0F4871BB08D3C0007E9DD /* Frameworks */,
+				E9C0F4881BB08D3C0007E9DD /* Resources */,
+				1EBD0486AD0F7EEB1E0A97FD /* [CP] Embed Pods Frameworks */,
+				5CB866AC4A2ACE0D7FD7F524 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Dev;
+			productName = Photisfy;
+			productReference = E9C0F48A1BB08D3C0007E9DD /* SchedulableObjectDemo-Dev.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E9C0F4A21BB08D3C0007E9DD /* Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E9C0F4AF1BB08D3C0007E9DD /* Build configuration list for PBXNativeTarget "Tests" */;
+			buildPhases = (
+				0100F068228C3E744B9D1765 /* [CP] Check Pods Manifest.lock */,
+				E9C0F49F1BB08D3C0007E9DD /* Sources */,
+				E9C0F4A01BB08D3C0007E9DD /* Frameworks */,
+				E9C0F4A11BB08D3C0007E9DD /* Resources */,
+				949B511AF81378C2B0060845 /* [CP] Embed Pods Frameworks */,
+				15B8CB547DCE03EFDA49F4A8 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Tests;
+			productName = PhotisfyTests;
+			productReference = E9C0F4A31BB08D3C0007E9DD /* Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E9C0F4821BB08D3C0007E9DD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "Pavel Osipov";
+				TargetAttributes = {
+					E9C0F4891BB08D3C0007E9DD = {
+						CreatedOnToolsVersion = 7.0;
+					};
+					E9C0F4A21BB08D3C0007E9DD = {
+						CreatedOnToolsVersion = 7.0;
+					};
+				};
+			};
+			buildConfigurationList = E9C0F4851BB08D3C0007E9DD /* Build configuration list for PBXProject "SchedulableObjectDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E9C0F4811BB08D3C0007E9DD;
+			productRefGroup = E9C0F48B1BB08D3C0007E9DD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E9C0F4891BB08D3C0007E9DD /* Dev */,
+				E9C0F4A21BB08D3C0007E9DD /* Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E9C0F4881BB08D3C0007E9DD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21D2E2411DC395CD00453C50 /* NSError.strings in Resources */,
+				E9C0F7091BB0A7C10007E9DD /* Localizable.strings in Resources */,
+				E9C0F5831BB09D390007E9DD /* NSError.strings in Resources */,
+				E9C0F5811BB09D390007E9DD /* Assets.xcassets in Resources */,
+				21D2E23B1DC395CD00453C50 /* NSError.strings in Resources */,
+				E9C0F5821BB09D390007E9DD /* LaunchScreen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E9C0F4A11BB08D3C0007E9DD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0100F068228C3E744B9D1765 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		15B8CB547DCE03EFDA49F4A8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SchedulableObjectDemoTests-Tests/Pods-SchedulableObjectDemoTests-Tests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1EBD0486AD0F7EEB1E0A97FD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SchedulableObjectDemo-Dev/Pods-SchedulableObjectDemo-Dev-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5CB866AC4A2ACE0D7FD7F524 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SchedulableObjectDemo-Dev/Pods-SchedulableObjectDemo-Dev-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		949B511AF81378C2B0060845 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SchedulableObjectDemoTests-Tests/Pods-SchedulableObjectDemoTests-Tests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E8DD6677BC5FC9E2F4C2B7F1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E9C0F4861BB08D3C0007E9DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21D2E23A1DC395CD00453C50 /* NSError+SODTrackable.m in Sources */,
+				21D2E23D1DC395CD00453C50 /* SODAppTracker.m in Sources */,
+				21D2E2251DC395CD00453C50 /* SODAccountRepository.m in Sources */,
+				21D2E2441DC395CD00453C50 /* UIDevice+SODInfrastructure.m in Sources */,
+				E933A46F1D247F7B00DAC930 /* UIImage+Resize.m in Sources */,
+				21D2E21E1DC395CD00453C50 /* SODAppController.m in Sources */,
+				21D2E22B1DC395CD00453C50 /* SODDropboxRequests.m in Sources */,
+				21D2E2241DC395CD00453C50 /* SODAccount.m in Sources */,
+				21D2E2231DC395CD00453C50 /* SODDropboxAccountInfoProvider.m in Sources */,
+				21D2E2301DC395CD00453C50 /* SODUserDefaultsKeyedStoreBackend.m in Sources */,
+				21D2E21B1DC395CD00453C50 /* SODWelcomeComponent.mm in Sources */,
+				21D2E2401DC395CD00453C50 /* main.m in Sources */,
+				21D2E22A1DC395CD00453C50 /* SODDropboxHost.m in Sources */,
+				21D2E23F1DC395CD00453C50 /* SODLogging.m in Sources */,
+				21D2E2271DC395CD00453C50 /* NSError+SODAuth.m in Sources */,
+				21D2E21F1DC395CD00453C50 /* NSBundle+SODPresentation.m in Sources */,
+				21D2E21A1DC395CD00453C50 /* SODSettingsViewController.m in Sources */,
+				21D2E23C1DC395CD00453C50 /* SODTrackableEvent.m in Sources */,
+				21D2E2431DC395CD00453C50 /* NSString+SODInfrastructure.m in Sources */,
+				21D2E22E1DC395CD00453C50 /* SODFileKeyedStoreBackend.m in Sources */,
+				21D2E2171DC395CD00453C50 /* SODLaunchErrorViewController.m in Sources */,
+				21D2E2341DC395CD00453C50 /* SODStaticHost.m in Sources */,
+				21D2E2381DC395CD00453C50 /* SODHTTPGET.m in Sources */,
+				21D2E21C1DC395CD00453C50 /* SODWelcomeViewController.mm in Sources */,
+				21D2E2311DC395CD00453C50 /* SODKeyedStore.m in Sources */,
+				21D2E2221DC395CD00453C50 /* SODAccountInfo.m in Sources */,
+				21D2E2211DC395CD00453C50 /* SODDropboxAccountAssembly.m in Sources */,
+				21D2E2371DC395CD00453C50 /* POSHTTPRequest+SOD.m in Sources */,
+				21D2E21D1DC395CD00453C50 /* SODBaseNavigationController.m in Sources */,
+				21D2E2281DC395CD00453C50 /* SODDropboxAuthenticator.m in Sources */,
+				21D2E2361DC395CD00453C50 /* SODNetworkStatus.m in Sources */,
+				21D2E2261DC395CD00453C50 /* SODCredentials.m in Sources */,
+				21D2E22D1DC395CD00453C50 /* SODEphemeralKeyedStoreBackend.m in Sources */,
+				21D2E2201DC395CD00453C50 /* SODAppAssembly.m in Sources */,
+				E933A4701D247F7B00DAC930 /* UIImage+RoundedCorner.m in Sources */,
+				21D2E2391DC395CD00453C50 /* SODHTTPPOST.m in Sources */,
+				21D2E2321DC395CD00453C50 /* NSError+SODHost.m in Sources */,
+				21D2E2351DC395CD00453C50 /* SODNetworkMonitor.m in Sources */,
+				E933A46D1D247F7B00DAC930 /* UIImage+Alpha.m in Sources */,
+				21D2E22C1DC395CD00453C50 /* SODEnvironment.m in Sources */,
+				21D2E2191DC395CD00453C50 /* SODLaunchViewController.m in Sources */,
+				E933A46E1D247F7B00DAC930 /* UIImage+Color.m in Sources */,
+				21D2E2421DC395CD00453C50 /* SODAppDelegate.m in Sources */,
+				21D2E23E1DC395CD00453C50 /* SODConsoleTracker.m in Sources */,
+				21D2E2181DC395CD00453C50 /* SODLaunchView.m in Sources */,
+				21D2E22F1DC395CD00453C50 /* SODKeychainKeyedStoreBackend.m in Sources */,
+				21D2E2331DC395CD00453C50 /* SODHost.m in Sources */,
+				21D2E2451DC395CD00453C50 /* UIViewController+SODInfrastructure.m in Sources */,
+				21D2E2161DC395CD00453C50 /* SODDropboxLoginViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E9C0F49F1BB08D3C0007E9DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21D2E0DA1DC38A6100453C50 /* SODDropboxHostTests.m in Sources */,
+				21D2E0DC1DC38A6100453C50 /* SODHostStub.m in Sources */,
+				21D2E0D81DC38A6100453C50 /* SODAccountRepositoryTests.m in Sources */,
+				21D2E0DD1DC38A6100453C50 /* SODHTTPGatewayStub.m in Sources */,
+				21D2E0D91DC38A6100453C50 /* SODDropboxAuthenticatorTests.m in Sources */,
+				21D2E0DB1DC38A6100453C50 /* SODKeyedStoreTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		E9C0F4AA1BB08D3C0007E9DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(PROJECT_NAME)-$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SOD_DROPBOX_APPKEY = your_app_key;
+				SOD_DROPBOX_APPSECRET = your_app_secret;
+			};
+			name = Debug;
+		};
+		E9C0F4AB1BB08D3C0007E9DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(PROJECT_NAME)-$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SOD_DROPBOX_APPKEY = your_app_key;
+				SOD_DROPBOX_APPSECRET = your_app_secret;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E9C0F4AD1BB08D3C0007E9DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E7A5B0C370A0047FBC6CA668 /* Pods-SchedulableObjectDemo-Dev.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/External/dropbox-ios-sdk-1.3.13",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/InfoPlists/Dev.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.pavelosipov.SchedulableObjectDemo;
+			};
+			name = Debug;
+		};
+		E9C0F4AE1BB08D3C0007E9DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6D834556CBA2951DAF3C5E81 /* Pods-SchedulableObjectDemo-Dev.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/External/dropbox-ios-sdk-1.3.13",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/InfoPlists/Dev.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.pavelosipov.SchedulableObjectDemo;
+			};
+			name = Release;
+		};
+		E9C0F4B01BB08D3C0007E9DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F7241F46F7DE437492CB7095 /* Pods-SchedulableObjectDemoTests-Tests.debug.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.pavelosipov.PhotisfyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		E9C0F4B11BB08D3C0007E9DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5D658525D29702892CC570CD /* Pods-SchedulableObjectDemoTests-Tests.release.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.pavelosipov.PhotisfyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E9C0F4851BB08D3C0007E9DD /* Build configuration list for PBXProject "SchedulableObjectDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E9C0F4AA1BB08D3C0007E9DD /* Debug */,
+				E9C0F4AB1BB08D3C0007E9DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E9C0F4AC1BB08D3C0007E9DD /* Build configuration list for PBXNativeTarget "Dev" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E9C0F4AD1BB08D3C0007E9DD /* Debug */,
+				E9C0F4AE1BB08D3C0007E9DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E9C0F4AF1BB08D3C0007E9DD /* Build configuration list for PBXNativeTarget "Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E9C0F4B01BB08D3C0007E9DD /* Debug */,
+				E9C0F4B11BB08D3C0007E9DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E9C0F4821BB08D3C0007E9DD /* Project object */;
+}

@@ -1,0 +1,16 @@
+/* 
+  NSError.strings
+  SchedulableObjectDemo
+
+  Created by Pavel Osipov on 29.01.16.
+  Copyright © 2016 Pavel Osipov. All rights reserved.
+*/
+
+"Auth" = "Forbidden";
+"Cancel" = "Cancelled";
+"Host" = "Communication Error";
+"Response" = "Communication Error";
+"Internal" = "Internal Error";
+"System" = "System Error";
+"Network" = "Network Error";
+"User" = "Input Error";

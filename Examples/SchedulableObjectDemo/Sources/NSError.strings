@@ -1,0 +1,66 @@
+/* 
+  NSError.strings
+  MRCloudSDK
+
+  Created by Pavel Osipov on 29.01.16.
+  Copyright © 2016 Mail.Ru Group. All rights reserved.
+*/
+
+"Authentication" = "Ой, что-то пошло не так. Попробуйте еще раз.";
+"Authorization" = "Доступ запрещен";
+"Blob" = "Файл недоступен";
+"BlobTooLargeFormat" = "Размер превышает %@";
+"Forbidden" = "Доступ запрещен";
+"Internal" = "Внутренняя ошибка";
+"System" = "Системная ошибка";
+"Server" = "Ошибка взаимодействия с сервером";
+"Metad" = "Действие недопустимо";
+"Network" = "Сбой сети";
+"InsufficientSpace" = "На устройстве недостаточно места";
+
+/* Error descriptions for subtypes of MetadError */
+"NotEnoughSpaceError" = "Недостаточно места";
+"AlreadyExistError" = "Объект с указанным именем уже существует";
+"NameTooLongError" = "Имя слишком длинное";
+"BadNameError" = "Объект с указанным именем не может быть создан";
+"ServiceTemporaryUnavailable" = "Сервис временно недоступен, попробуйте повторить операцию позднее";
+"ExportLimitError" = "Достигнут лимит общих папок";
+"ImportLimitError" = "Достигнут лимит подключений к общим папкам";
+"InvitesLimitError" = "Достигнут лимит количества участников";
+"UsersLimitError" = "Достигнут лимит количества участников";
+"AccessDeniedError" = "Недостаточно прав";
+"NeedUnshareAncestor" = "Папка находится внутри общей папки";
+"NeedUnshareSubdirectory" = "Папка содержит в себе общую папку";
+"NotImplementedError" = "Функционал скоро будет добавлен";
+
+/* Bad name errors */
+"MRCBadNodeNameReasonEmpty" = "Пустое имя недопустимо";
+"MRCBadNodeNameReasonTooBig" = "Имя слишком длинное";
+"MRCBadNodeNameReasonBadCharacters" = "Имя содержит недопустимый символ";
+
+/* Error descriptions for subtypes of SWAError */
+"SWAInvalidUsernameOrPasswordError" = "Неверное имя пользователя или пароль";
+"SWASecondStepRateLimitError" = "Превышен лимит запросов.";
+"SWAUnvalidAuthCode" = "Введен неверный код";
+"SWABlockedUserCode" = "Доступ ограничен.\nЧтобы восстановить доступ, введите логин и пароль на главной странице Mail.Ru, далее следуйте инструкции.";
+"SWAFirstStepRequiredError" = "Время ожидания истекло. Введите логин и пароль.";
+"SWATimeoutFormat" = "Повторите запрос через %ld %@.";
+
+/* Plural rules for timeout */
+"%d minutes (plural rule: one)" = "минуту";
+"%d minutes (plural rule: two)" = "минуты";
+"%d minutes (plural rule: few)" = "минуты";
+"%d minutes (plural rule: many)" = "минут";
+"%d minutes (plural rule: other)" = "минут";
+
+"%d hours (plural rule: one)" = "час";
+"%d hours (plural rule: two)" = "часа";
+"%d hours (plural rule: few)" = "часа";
+"%d hours (plural rule: many)" = "часов";
+"%d hours (plural rule: other)" = "часов";
+
+"%d days (plural rule: one)" = "день";
+"%d days (plural rule: two)" = "дня";
+"%d days (plural rule: few)" = "дня";
+"%d days (plural rule: many)" = "дней";
+"%d days (plural rule: other)" = "дней";
