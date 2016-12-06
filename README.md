@@ -153,7 +153,7 @@ Assembly имел асинхронную природу.
 Все выглядит достаточно просто пока вдруг не потребуется создать граф объектов, которые, во-первых, живут
 в разных потоках, а во-вторых, для своей инициализации требуют вызвать один или несколько своих методов.
 
-![payload](https://raw.github.com/pavelosipov/POSSchedulableObject/master/.images/dependency_cycle.png)
+![payload](https://raw.github.com/pavelosipov/POSSchedulableObject/master/.images/dependency_cycle.jpg)
 
 Проблема в этом сценарии состоит в том, что для инициализации объекта A необходимо в красном потоке
 инициализировать объект B. Для того, чтобы с точки зрения клиента Assembly это произошло синхронно, на время
