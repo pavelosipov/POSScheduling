@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		21D2E0111DC3869C00453C50 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D2E0101DC3869C00453C50 /* main.swift */; };
+		684C328420E2A8D900AE70E6 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684C328320E2A8D900AE70E6 /* main.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,7 +24,7 @@
 
 /* Begin PBXFileReference section */
 		21D2E00D1DC3869C00453C50 /* SchedulableObjectConceptApp */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SchedulableObjectConceptApp; sourceTree = BUILT_PRODUCTS_DIR; };
-		21D2E0101DC3869C00453C50 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		684C328320E2A8D900AE70E6 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,7 +41,7 @@
 		21D2E0041DC3869C00453C50 = {
 			isa = PBXGroup;
 			children = (
-				21D2E00F1DC3869C00453C50 /* SchedulableObjectConceptApp */,
+				684C328220E2A8D900AE70E6 /* ConceptApp */,
 				21D2E00E1DC3869C00453C50 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -54,12 +54,12 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		21D2E00F1DC3869C00453C50 /* SchedulableObjectConceptApp */ = {
+		684C328220E2A8D900AE70E6 /* ConceptApp */ = {
 			isa = PBXGroup;
 			children = (
-				21D2E0101DC3869C00453C50 /* main.swift */,
+				684C328320E2A8D900AE70E6 /* main.swift */,
 			);
-			path = SchedulableObjectConceptApp;
+			path = ConceptApp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -99,7 +99,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 21D2E0081DC3869C00453C50 /* Build configuration list for PBXProject "SchedulableObjectConceptApp" */;
+			buildConfigurationList = 21D2E0081DC3869C00453C50 /* Build configuration list for PBXProject "ConceptApp" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -121,7 +121,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				21D2E0111DC3869C00453C50 /* main.swift in Sources */,
+				684C328420E2A8D900AE70E6 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,7 +237,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		21D2E0081DC3869C00453C50 /* Build configuration list for PBXProject "SchedulableObjectConceptApp" */ = {
+		21D2E0081DC3869C00453C50 /* Build configuration list for PBXProject "ConceptApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				21D2E0121DC3869C00453C50 /* Debug */,
@@ -253,6 +253,7 @@
 				21D2E0161DC3869C00453C50 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
