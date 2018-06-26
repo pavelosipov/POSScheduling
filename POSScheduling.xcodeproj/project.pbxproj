@@ -1,0 +1,542 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		684C327A20E2A1A100AE70E6 /* POSSchedulableObjectMocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 684C327120E2A1A000AE70E6 /* POSSchedulableObjectMocks.m */; };
+		684C327B20E2A1A100AE70E6 /* POSSequentialTaskExecutorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 684C327220E2A1A000AE70E6 /* POSSequentialTaskExecutorTests.m */; };
+		684C327C20E2A1A100AE70E6 /* POSSchedulableObjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 684C327320E2A1A100AE70E6 /* POSSchedulableObjectTests.m */; };
+		684C327D20E2A1A100AE70E6 /* POSTaskSchedulingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 684C327420E2A1A100AE70E6 /* POSTaskSchedulingTests.m */; };
+		684C327E20E2A1A100AE70E6 /* POSSignalAwaitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 684C327520E2A1A100AE70E6 /* POSSignalAwaitTests.m */; };
+		684C327F20E2A1A100AE70E6 /* POSDirectTaskExecutorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 684C327620E2A1A100AE70E6 /* POSDirectTaskExecutorTests.m */; };
+		684C328020E2A1A100AE70E6 /* POSTaskTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 684C327820E2A1A100AE70E6 /* POSTaskTests.m */; };
+		684C328120E2A1A100AE70E6 /* POSTaskSubclassingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 684C327920E2A1A100AE70E6 /* POSTaskSubclassingTests.m */; };
+		68D28C1320E27F6500AF3A2D /* RACSignal+POSScheduling.m in Sources */ = {isa = PBXBuildFile; fileRef = 68D28C0420E27F6500AF3A2D /* RACSignal+POSScheduling.m */; };
+		68D28C1420E27F6500AF3A2D /* RACTargetQueueScheduler+POSScheduling.m in Sources */ = {isa = PBXBuildFile; fileRef = 68D28C0520E27F6500AF3A2D /* RACTargetQueueScheduler+POSScheduling.m */; };
+		68D28C1520E27F6500AF3A2D /* POSSchedulableObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 68D28C0920E27F6500AF3A2D /* POSSchedulableObject.m */; };
+		68D28C1620E27F6500AF3A2D /* POSTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 68D28C0E20E27F6500AF3A2D /* POSTask.m */; };
+		68D28C1720E27F6500AF3A2D /* POSSequentialTaskExecutor.m in Sources */ = {isa = PBXBuildFile; fileRef = 68D28C0F20E27F6500AF3A2D /* POSSequentialTaskExecutor.m */; };
+		68D28C1820E27F6500AF3A2D /* POSTaskQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 68D28C1020E27F6500AF3A2D /* POSTaskQueue.m */; };
+		8912F0AFF70E3BB528B8896E /* libPods-All-POSSchedulingTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CBAE0933CA2EFF5018E37EB4 /* libPods-All-POSSchedulingTests.a */; };
+		BDF0012BC4D750DE2FBBE12F /* libPods-All-POSScheduling.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A92BEA116326239F851EBEC9 /* libPods-All-POSScheduling.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		68D28C0020E27EC300AF3A2D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 21D2DFCD1DC3793000453C50 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 21D2DFD41DC3793000453C50;
+			remoteInfo = POSScheduling;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		21D2DFD31DC3793000453C50 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		21D2DFD51DC3793000453C50 /* libPOSScheduling.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPOSScheduling.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		21D2DFEE1DC37AAB00453C50 /* POSSchedulingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = POSSchedulingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		21D2DFF21DC37AAB00453C50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		39356DD3503D1DA3148CE901 /* Pods-All-POSScheduling.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-POSScheduling.release.xcconfig"; path = "Pods/Target Support Files/Pods-All-POSScheduling/Pods-All-POSScheduling.release.xcconfig"; sourceTree = "<group>"; };
+		684C327120E2A1A000AE70E6 /* POSSchedulableObjectMocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POSSchedulableObjectMocks.m; sourceTree = "<group>"; };
+		684C327220E2A1A000AE70E6 /* POSSequentialTaskExecutorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POSSequentialTaskExecutorTests.m; sourceTree = "<group>"; };
+		684C327320E2A1A100AE70E6 /* POSSchedulableObjectTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POSSchedulableObjectTests.m; sourceTree = "<group>"; };
+		684C327420E2A1A100AE70E6 /* POSTaskSchedulingTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POSTaskSchedulingTests.m; sourceTree = "<group>"; };
+		684C327520E2A1A100AE70E6 /* POSSignalAwaitTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POSSignalAwaitTests.m; sourceTree = "<group>"; };
+		684C327620E2A1A100AE70E6 /* POSDirectTaskExecutorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POSDirectTaskExecutorTests.m; sourceTree = "<group>"; };
+		684C327720E2A1A100AE70E6 /* POSSchedulableObjectMocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POSSchedulableObjectMocks.h; sourceTree = "<group>"; };
+		684C327820E2A1A100AE70E6 /* POSTaskTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POSTaskTests.m; sourceTree = "<group>"; };
+		684C327920E2A1A100AE70E6 /* POSTaskSubclassingTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POSTaskSubclassingTests.m; sourceTree = "<group>"; };
+		68D28C0320E27F6500AF3A2D /* RACTargetQueueScheduler+POSScheduling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RACTargetQueueScheduler+POSScheduling.h"; sourceTree = "<group>"; };
+		68D28C0420E27F6500AF3A2D /* RACSignal+POSScheduling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RACSignal+POSScheduling.m"; sourceTree = "<group>"; };
+		68D28C0520E27F6500AF3A2D /* RACTargetQueueScheduler+POSScheduling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RACTargetQueueScheduler+POSScheduling.m"; sourceTree = "<group>"; };
+		68D28C0620E27F6500AF3A2D /* RACSignal+POSScheduling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RACSignal+POSScheduling.h"; sourceTree = "<group>"; };
+		68D28C0820E27F6500AF3A2D /* POSSchedulableObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POSSchedulableObject.h; sourceTree = "<group>"; };
+		68D28C0920E27F6500AF3A2D /* POSSchedulableObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POSSchedulableObject.m; sourceTree = "<group>"; };
+		68D28C0A20E27F6500AF3A2D /* POSSchedulable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POSSchedulable.h; sourceTree = "<group>"; };
+		68D28C0C20E27F6500AF3A2D /* POSSequentialTaskExecutor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POSSequentialTaskExecutor.h; sourceTree = "<group>"; };
+		68D28C0D20E27F6500AF3A2D /* POSTaskQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POSTaskQueue.h; sourceTree = "<group>"; };
+		68D28C0E20E27F6500AF3A2D /* POSTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POSTask.m; sourceTree = "<group>"; };
+		68D28C0F20E27F6500AF3A2D /* POSSequentialTaskExecutor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POSSequentialTaskExecutor.m; sourceTree = "<group>"; };
+		68D28C1020E27F6500AF3A2D /* POSTaskQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POSTaskQueue.m; sourceTree = "<group>"; };
+		68D28C1120E27F6500AF3A2D /* POSTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POSTask.h; sourceTree = "<group>"; };
+		68D28C1220E27F6500AF3A2D /* POSScheduling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POSScheduling.h; sourceTree = "<group>"; };
+		A92BEA116326239F851EBEC9 /* libPods-All-POSScheduling.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-All-POSScheduling.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C6221587946E01F8AEF79727 /* Pods-All-POSSchedulingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-POSSchedulingTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-All-POSSchedulingTests/Pods-All-POSSchedulingTests.release.xcconfig"; sourceTree = "<group>"; };
+		C63C9EDDD5EFDD3AE9362E12 /* Pods-All-POSSchedulingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-POSSchedulingTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-All-POSSchedulingTests/Pods-All-POSSchedulingTests.debug.xcconfig"; sourceTree = "<group>"; };
+		CBAE0933CA2EFF5018E37EB4 /* libPods-All-POSSchedulingTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-All-POSSchedulingTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DAEA8A69CD37F763DDC4F64A /* Pods-All-POSScheduling.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-POSScheduling.debug.xcconfig"; path = "Pods/Target Support Files/Pods-All-POSScheduling/Pods-All-POSScheduling.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		21D2DFD21DC3793000453C50 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BDF0012BC4D750DE2FBBE12F /* libPods-All-POSScheduling.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		21D2DFEB1DC37AAB00453C50 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8912F0AFF70E3BB528B8896E /* libPods-All-POSSchedulingTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		21D2DFCC1DC3793000453C50 = {
+			isa = PBXGroup;
+			children = (
+				21D2DFE11DC37A2800453C50 /* Classes */,
+				21D2DFEF1DC37AAB00453C50 /* Tests */,
+				21D2DFD61DC3793000453C50 /* Products */,
+				9A564900AD2B2D0EE253AC85 /* Pods */,
+				8827EA395011589A502BD62B /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		21D2DFD61DC3793000453C50 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				21D2DFD51DC3793000453C50 /* libPOSScheduling.a */,
+				21D2DFEE1DC37AAB00453C50 /* POSSchedulingTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		21D2DFE11DC37A2800453C50 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				68D28C0720E27F6500AF3A2D /* SchedulableObject */,
+				68D28C0B20E27F6500AF3A2D /* Task */,
+				68D28C0220E27F6500AF3A2D /* Categories */,
+				68D28C1220E27F6500AF3A2D /* POSScheduling.h */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		21D2DFEF1DC37AAB00453C50 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				684C327620E2A1A100AE70E6 /* POSDirectTaskExecutorTests.m */,
+				684C327720E2A1A100AE70E6 /* POSSchedulableObjectMocks.h */,
+				684C327120E2A1A000AE70E6 /* POSSchedulableObjectMocks.m */,
+				684C327320E2A1A100AE70E6 /* POSSchedulableObjectTests.m */,
+				684C327220E2A1A000AE70E6 /* POSSequentialTaskExecutorTests.m */,
+				684C327520E2A1A100AE70E6 /* POSSignalAwaitTests.m */,
+				684C327420E2A1A100AE70E6 /* POSTaskSchedulingTests.m */,
+				684C327920E2A1A100AE70E6 /* POSTaskSubclassingTests.m */,
+				684C327820E2A1A100AE70E6 /* POSTaskTests.m */,
+				21D2DFF21DC37AAB00453C50 /* Info.plist */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		68D28C0220E27F6500AF3A2D /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				68D28C0620E27F6500AF3A2D /* RACSignal+POSScheduling.h */,
+				68D28C0420E27F6500AF3A2D /* RACSignal+POSScheduling.m */,
+				68D28C0320E27F6500AF3A2D /* RACTargetQueueScheduler+POSScheduling.h */,
+				68D28C0520E27F6500AF3A2D /* RACTargetQueueScheduler+POSScheduling.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		68D28C0720E27F6500AF3A2D /* SchedulableObject */ = {
+			isa = PBXGroup;
+			children = (
+				68D28C0A20E27F6500AF3A2D /* POSSchedulable.h */,
+				68D28C0820E27F6500AF3A2D /* POSSchedulableObject.h */,
+				68D28C0920E27F6500AF3A2D /* POSSchedulableObject.m */,
+			);
+			path = SchedulableObject;
+			sourceTree = "<group>";
+		};
+		68D28C0B20E27F6500AF3A2D /* Task */ = {
+			isa = PBXGroup;
+			children = (
+				68D28C1120E27F6500AF3A2D /* POSTask.h */,
+				68D28C0E20E27F6500AF3A2D /* POSTask.m */,
+				68D28C0C20E27F6500AF3A2D /* POSSequentialTaskExecutor.h */,
+				68D28C0F20E27F6500AF3A2D /* POSSequentialTaskExecutor.m */,
+				68D28C0D20E27F6500AF3A2D /* POSTaskQueue.h */,
+				68D28C1020E27F6500AF3A2D /* POSTaskQueue.m */,
+			);
+			path = Task;
+			sourceTree = "<group>";
+		};
+		8827EA395011589A502BD62B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A92BEA116326239F851EBEC9 /* libPods-All-POSScheduling.a */,
+				CBAE0933CA2EFF5018E37EB4 /* libPods-All-POSSchedulingTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9A564900AD2B2D0EE253AC85 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DAEA8A69CD37F763DDC4F64A /* Pods-All-POSScheduling.debug.xcconfig */,
+				39356DD3503D1DA3148CE901 /* Pods-All-POSScheduling.release.xcconfig */,
+				C63C9EDDD5EFDD3AE9362E12 /* Pods-All-POSSchedulingTests.debug.xcconfig */,
+				C6221587946E01F8AEF79727 /* Pods-All-POSSchedulingTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		21D2DFD41DC3793000453C50 /* POSScheduling */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 21D2DFDE1DC3793000453C50 /* Build configuration list for PBXNativeTarget "POSScheduling" */;
+			buildPhases = (
+				3EA7D24A3DD9B0ED54EE28C9 /* [CP] Check Pods Manifest.lock */,
+				21D2DFD11DC3793000453C50 /* Sources */,
+				21D2DFD21DC3793000453C50 /* Frameworks */,
+				21D2DFD31DC3793000453C50 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = POSScheduling;
+			productName = POSSchedulableObject;
+			productReference = 21D2DFD51DC3793000453C50 /* libPOSScheduling.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		21D2DFED1DC37AAB00453C50 /* POSSchedulingTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 21D2DFF31DC37AAB00453C50 /* Build configuration list for PBXNativeTarget "POSSchedulingTests" */;
+			buildPhases = (
+				6DB71FEAF254ACA22FC1E65B /* [CP] Check Pods Manifest.lock */,
+				21D2DFEA1DC37AAB00453C50 /* Sources */,
+				21D2DFEB1DC37AAB00453C50 /* Frameworks */,
+				21D2DFEC1DC37AAB00453C50 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				68D28C0120E27EC300AF3A2D /* PBXTargetDependency */,
+			);
+			name = POSSchedulingTests;
+			productName = Tests;
+			productReference = 21D2DFEE1DC37AAB00453C50 /* POSSchedulingTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		21D2DFCD1DC3793000453C50 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = "Pavel Osipov";
+				TargetAttributes = {
+					21D2DFD41DC3793000453C50 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 9KQ66ZZZW7;
+						ProvisioningStyle = Automatic;
+					};
+					21D2DFED1DC37AAB00453C50 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 9KQ66ZZZW7;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 21D2DFD01DC3793000453C50 /* Build configuration list for PBXProject "POSScheduling" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 21D2DFCC1DC3793000453C50;
+			productRefGroup = 21D2DFD61DC3793000453C50 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				21D2DFD41DC3793000453C50 /* POSScheduling */,
+				21D2DFED1DC37AAB00453C50 /* POSSchedulingTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		21D2DFEC1DC37AAB00453C50 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3EA7D24A3DD9B0ED54EE28C9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-All-POSScheduling-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6DB71FEAF254ACA22FC1E65B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-All-POSSchedulingTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		21D2DFD11DC3793000453C50 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				68D28C1720E27F6500AF3A2D /* POSSequentialTaskExecutor.m in Sources */,
+				68D28C1420E27F6500AF3A2D /* RACTargetQueueScheduler+POSScheduling.m in Sources */,
+				68D28C1620E27F6500AF3A2D /* POSTask.m in Sources */,
+				68D28C1520E27F6500AF3A2D /* POSSchedulableObject.m in Sources */,
+				68D28C1320E27F6500AF3A2D /* RACSignal+POSScheduling.m in Sources */,
+				68D28C1820E27F6500AF3A2D /* POSTaskQueue.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		21D2DFEA1DC37AAB00453C50 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				684C327C20E2A1A100AE70E6 /* POSSchedulableObjectTests.m in Sources */,
+				684C327D20E2A1A100AE70E6 /* POSTaskSchedulingTests.m in Sources */,
+				684C328120E2A1A100AE70E6 /* POSTaskSubclassingTests.m in Sources */,
+				684C327B20E2A1A100AE70E6 /* POSSequentialTaskExecutorTests.m in Sources */,
+				684C327A20E2A1A100AE70E6 /* POSSchedulableObjectMocks.m in Sources */,
+				684C327E20E2A1A100AE70E6 /* POSSignalAwaitTests.m in Sources */,
+				684C328020E2A1A100AE70E6 /* POSTaskTests.m in Sources */,
+				684C327F20E2A1A100AE70E6 /* POSDirectTaskExecutorTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		68D28C0120E27EC300AF3A2D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 21D2DFD41DC3793000453C50 /* POSScheduling */;
+			targetProxy = 68D28C0020E27EC300AF3A2D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		21D2DFDC1DC3793000453C50 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "$(inherited)";
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		21D2DFDD1DC3793000453C50 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "$(inherited)";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		21D2DFDF1DC3793000453C50 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DAEA8A69CD37F763DDC4F64A /* Pods-All-POSScheduling.debug.xcconfig */;
+			buildSettings = {
+				DEVELOPMENT_TEAM = 9KQ66ZZZW7;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		21D2DFE01DC3793000453C50 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 39356DD3503D1DA3148CE901 /* Pods-All-POSScheduling.release.xcconfig */;
+			buildSettings = {
+				DEVELOPMENT_TEAM = 9KQ66ZZZW7;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		21D2DFF41DC37AAB00453C50 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C63C9EDDD5EFDD3AE9362E12 /* Pods-All-POSSchedulingTests.debug.xcconfig */;
+			buildSettings = {
+				DEVELOPMENT_TEAM = 9KQ66ZZZW7;
+				INFOPLIST_FILE = Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.pavelosipov.Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		21D2DFF51DC37AAB00453C50 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C6221587946E01F8AEF79727 /* Pods-All-POSSchedulingTests.release.xcconfig */;
+			buildSettings = {
+				DEVELOPMENT_TEAM = 9KQ66ZZZW7;
+				INFOPLIST_FILE = Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.pavelosipov.Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		21D2DFD01DC3793000453C50 /* Build configuration list for PBXProject "POSScheduling" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				21D2DFDC1DC3793000453C50 /* Debug */,
+				21D2DFDD1DC3793000453C50 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		21D2DFDE1DC3793000453C50 /* Build configuration list for PBXNativeTarget "POSScheduling" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				21D2DFDF1DC3793000453C50 /* Debug */,
+				21D2DFE01DC3793000453C50 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		21D2DFF31DC37AAB00453C50 /* Build configuration list for PBXNativeTarget "POSSchedulingTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				21D2DFF41DC37AAB00453C50 /* Debug */,
+				21D2DFF51DC37AAB00453C50 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 21D2DFCD1DC3793000453C50 /* Project object */;
+}

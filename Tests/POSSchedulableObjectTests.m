@@ -1,9 +1,9 @@
 //
 //  POSSchedulableObjectTests.m
-//  POSSchedulableObject
+//  POSScheduling
 //
 //  Created by Pavel Osipov on 25.05.15.
-//  Copyright (c) 2015 Pavel Osipov. All rights reserved.
+//  Copyright © 2015 Pavel Osipov. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

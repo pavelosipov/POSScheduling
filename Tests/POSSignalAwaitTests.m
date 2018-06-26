@@ -1,12 +1,12 @@
 //
 //  POSSignalAwaitTests.m
-//  POSSchedulableObject
+//  POSScheduling
 //
 //  Created by Pavel Osipov on 13.06.16.
 //  Copyright © 2016 Pavel Osipov. All rights reserved.
 //
 
-#import <POSSchedulableObject/POSSchedulableObject.h>
+#import <POSScheduling/POSScheduling.h>
 #import <POSAllocationTracker/POSAllocationTracker.h>
 #import <XCTest/XCTest.h>
 
