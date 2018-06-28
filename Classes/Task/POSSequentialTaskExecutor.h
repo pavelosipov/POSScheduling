@@ -6,7 +6,6 @@
 //  Copyright © 2016 Pavel Osipov. All rights reserved.
 //
 
-#import "POSTask.h"
 #import "POSTaskQueue.h"
 
 NS_ASSUME_NONNULL_BEGIN
@@ -35,7 +34,9 @@ NS_ASSUME_NONNULL_BEGIN
                         taskQueue:(id<POSTaskQueue>)taskQueue;
 
 - (instancetype)initWithUnderlyingExecutor:(id<POSTaskExecutor>)executor
-                                 taskQueue:(id<POSTaskQueue>)taskQueue;
+                                 taskQueue:(id<POSTaskQueue>)taskQueue NS_DESIGNATED_INITIALIZER;
+
+POS_SCHEDULABLE_INIT_RECURSIVELY_UNAVAILABLE
 
 @end
 

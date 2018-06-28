@@ -27,8 +27,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @implementation POSSequentialTaskExecutor
 
-- (instancetype)initWithScheduler:(RACTargetQueueScheduler *)scheduler
-                          options:(nullable POSScheduleProtectionOptions *)options {
+- (instancetype)initWithScheduler:(RACTargetQueueScheduler *)scheduler {
     typedef NSMutableArray<POSTask *> Queue_t;
     return [self
             initWithUnderlyingExecutor:[[POSDirectTaskExecutor alloc] initWithScheduler:scheduler]
@@ -44,8 +43,7 @@ NS_ASSUME_NONNULL_BEGIN
                  [queue removeObject:task];
              } enqueueTaskBlock:^(Queue_t *queue, POSTask *task) {
                  [queue addObject:task];
-             }]
-            options:options];
+             }]];
 }
 
 - (instancetype)initWithScheduler:(RACTargetQueueScheduler *)scheduler
@@ -58,15 +56,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (instancetype)initWithUnderlyingExecutor:(id<POSTaskExecutor>)executor
                                  taskQueue:(id<POSTaskQueue>)taskQueue {
-    return [self initWithUnderlyingExecutor:executor taskQueue:taskQueue options:nil];
-}
-
-- (instancetype)initWithUnderlyingExecutor:(id<POSTaskExecutor>)executor
-                                 taskQueue:(id<POSTaskQueue>)taskQueue
-                                   options:(nullable POSScheduleProtectionOptions *)options {
     POS_CHECK(executor);
     POS_CHECK(taskQueue);
-    if (self = [super initWithScheduler:executor.scheduler options:options]) {
+    if (self = [super initWithScheduler:executor.scheduler safetyPredicate:nil]) {
         _executingTasksCountSubject = [RACSubject subject];
         _underlyingExecutor = executor;
         _pendingTasks = taskQueue;

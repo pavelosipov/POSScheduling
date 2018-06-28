@@ -67,7 +67,7 @@ NS_ASSUME_NONNULL_BEGIN
                               executor:(nullable id<POSTaskExecutor>)executor NS_DESIGNATED_INITIALIZER;
 
 /// Preventing usage of base initializers.
-POS_SCHEDULABLE_INIT_RECURSIVELY_UNAVAILABLE;
+POS_SCHEDULABLE_INIT_RECURSIVELY_UNAVAILABLE
 
 @end
 

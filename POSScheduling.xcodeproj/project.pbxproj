@@ -15,6 +15,7 @@
 		684C327F20E2A1A100AE70E6 /* POSDirectTaskExecutorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 684C327620E2A1A100AE70E6 /* POSDirectTaskExecutorTests.m */; };
 		684C328020E2A1A100AE70E6 /* POSTaskTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 684C327820E2A1A100AE70E6 /* POSTaskTests.m */; };
 		684C328120E2A1A100AE70E6 /* POSTaskSubclassingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 684C327920E2A1A100AE70E6 /* POSTaskSubclassingTests.m */; };
+		68AFBB5120E525F6009549C5 /* NSObject+POSScheduling.m in Sources */ = {isa = PBXBuildFile; fileRef = 68AFBB5020E525F6009549C5 /* NSObject+POSScheduling.m */; };
 		68D28C1320E27F6500AF3A2D /* RACSignal+POSScheduling.m in Sources */ = {isa = PBXBuildFile; fileRef = 68D28C0420E27F6500AF3A2D /* RACSignal+POSScheduling.m */; };
 		68D28C1420E27F6500AF3A2D /* RACTargetQueueScheduler+POSScheduling.m in Sources */ = {isa = PBXBuildFile; fileRef = 68D28C0520E27F6500AF3A2D /* RACTargetQueueScheduler+POSScheduling.m */; };
 		68D28C1520E27F6500AF3A2D /* POSSchedulableObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 68D28C0920E27F6500AF3A2D /* POSSchedulableObject.m */; };
@@ -61,6 +62,8 @@
 		684C327720E2A1A100AE70E6 /* POSSchedulableObjectMocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POSSchedulableObjectMocks.h; sourceTree = "<group>"; };
 		684C327820E2A1A100AE70E6 /* POSTaskTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POSTaskTests.m; sourceTree = "<group>"; };
 		684C327920E2A1A100AE70E6 /* POSTaskSubclassingTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POSTaskSubclassingTests.m; sourceTree = "<group>"; };
+		68AFBB4F20E525F6009549C5 /* NSObject+POSScheduling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+POSScheduling.h"; sourceTree = "<group>"; };
+		68AFBB5020E525F6009549C5 /* NSObject+POSScheduling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+POSScheduling.m"; sourceTree = "<group>"; };
 		68D28C0320E27F6500AF3A2D /* RACTargetQueueScheduler+POSScheduling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RACTargetQueueScheduler+POSScheduling.h"; sourceTree = "<group>"; };
 		68D28C0420E27F6500AF3A2D /* RACSignal+POSScheduling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RACSignal+POSScheduling.m"; sourceTree = "<group>"; };
 		68D28C0520E27F6500AF3A2D /* RACTargetQueueScheduler+POSScheduling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RACTargetQueueScheduler+POSScheduling.m"; sourceTree = "<group>"; };
@@ -153,6 +156,8 @@
 		68D28C0220E27F6500AF3A2D /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				68AFBB4F20E525F6009549C5 /* NSObject+POSScheduling.h */,
+				68AFBB5020E525F6009549C5 /* NSObject+POSScheduling.m */,
 				68D28C0620E27F6500AF3A2D /* RACSignal+POSScheduling.h */,
 				68D28C0420E27F6500AF3A2D /* RACSignal+POSScheduling.m */,
 				68D28C0320E27F6500AF3A2D /* RACTargetQueueScheduler+POSScheduling.h */,
@@ -341,6 +346,7 @@
 				68D28C1420E27F6500AF3A2D /* RACTargetQueueScheduler+POSScheduling.m in Sources */,
 				68D28C1620E27F6500AF3A2D /* POSTask.m in Sources */,
 				68D28C1520E27F6500AF3A2D /* POSSchedulableObject.m in Sources */,
+				68AFBB5120E525F6009549C5 /* NSObject+POSScheduling.m in Sources */,
 				68D28C1320E27F6500AF3A2D /* RACSignal+POSScheduling.m in Sources */,
 				68D28C1820E27F6500AF3A2D /* POSTaskQueue.m in Sources */,
 			);

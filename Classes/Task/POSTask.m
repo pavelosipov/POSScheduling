@@ -31,7 +31,7 @@ NS_ASSUME_NONNULL_BEGIN
                               executor:(nullable id<POSTaskExecutor>)executor {
     POS_CHECK(scheduler);
     POS_CHECK(executionBlock);
-    if (self = [super initWithScheduler:scheduler options:nil]) {
+    if (self = [super initWithScheduler:scheduler safetyPredicate:nil]) {
         _executionBlock = [executionBlock copy];
         _executor = executor;
         
