@@ -24,7 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
                         container:(QueueType)container
               dequeueTopTaskBlock:(nullable POSTask *(^)(QueueType queue))dequeueTopTaskBlock
                  dequeueTaskBlock:(void(^)(QueueType queue, POSTask *task))dequeueTaskBlock
-                 enqueueTaskBlock:(void(^)(QueueType queue, POSTask *task))enqueueTaskBlock;
+                 enqueueTaskBlock:(void(^)(QueueType queue, POSTask *task))enqueueTaskBlock NS_DESIGNATED_INITIALIZER;
 
 POS_SCHEDULABLE_INIT_RECURSIVELY_UNAVAILABLE
 

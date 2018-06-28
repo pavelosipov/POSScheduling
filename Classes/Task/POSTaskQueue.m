@@ -28,7 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
     POS_CHECK(dequeueTopTaskBlock);
     POS_CHECK(dequeueTaskBlock);
     POS_CHECK(enqueueTaskBlock);
-    if (self = [super initWithScheduler:scheduler]) {
+    if (self = [super initWithScheduler:scheduler safetyPredicate:nil]) {
         _container = container;
         _dequeueTopTaskBlock = [dequeueTopTaskBlock copy];
         _dequeueTaskBlock = [dequeueTaskBlock copy];
