@@ -26,6 +26,8 @@ typedef BOOL (^POSSafetyPredicate)(SEL selector, POSSelectorAttributes attribute
 - (void)pos_protectForScheduler:(RACTargetQueueScheduler *)scheduler
                       predicate:(nullable POSSafetyPredicate)predicate;
 
+- (NSInvocation *)pos_invocationForSelector:(SEL)selector;
+
 @end
 
 #pragma mark -

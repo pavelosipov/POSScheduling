@@ -64,6 +64,16 @@ static BOOL pos_isHooksIncompatibleSelector(Class aClass, SEL selector);
     });
 }
 
+- (NSInvocation *)pos_invocationForSelector:(SEL)selector {
+    POS_CHECK(selector != NULL);
+    NSMethodSignature *methodSignature = [self methodSignatureForSelector:selector];
+    POS_CHECK_EX(methodSignature != nil, @"%@ does not respond to %@", self, NSStringFromSelector(selector));
+    NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:methodSignature];
+    invocation.selector = selector;
+    invocation.target = self;
+    return invocation;
+}
+
 @end
 
 #pragma mark - Public Functions

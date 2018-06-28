@@ -22,9 +22,21 @@
 @end
 
 @protocol SafeProtocol <NSObject>
-- (void)methodA;
+- (void)safeMethod;
 @end
 
 @interface SchedulableObject : POSSchedulableObject <SafeProtocol>
+
 - (CGSize)preferedSize;
+
+- (RACSignal<NSNumber *> *)unsafeMethod;
+
+- (RACSignal<NSNumber *> *)unsafeMethodWithArg:(NSNumber *)value;
+
+- (RACSignal<NSNumber *> *)unsafeMethodWithArg1:(NSNumber *)arg1
+                                           arg2:(NSNumber *)arg2
+                                           arg3:(NSNumber *)arg3
+                                           arg4:(NSNumber *)arg4
+                                           arg5:(NSNumber *)arg5;
+
 @end

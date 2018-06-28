@@ -9,6 +9,8 @@
 #import "POSSchedulableObject.h"
 #import "RACTargetQueueScheduler+POSScheduling.h"
 
+#import <ReactiveObjC/NSInvocation+RACTypeParsing.h>
+
 #ifndef POS_ENABLE_RUNTIME_CHECKS
 #   ifdef DEBUG
 #       define POS_ENABLE_RUNTIME_CHECKS 1
@@ -59,7 +61,36 @@ NS_ASSUME_NONNULL_BEGIN
     }];
 }
 
+- (RACSignal *)autoschedule:(SEL)selector {
+    return [self p_autoscheduleInvocation:[self pos_invocationForSelector:selector]];
+}
+
+- (RACSignal *)autoschedule:(SEL)selector withArguments:(nullable id)firstArgument, ... {
+    NSInvocation *invocation = [self pos_invocationForSelector:selector];
+    va_list args;
+    va_start(args, firstArgument);
+    NSInteger argumentIndex = 2;
+    for (id argument = firstArgument; argument != nil; argument = va_arg(args, id), ++argumentIndex) {
+        [invocation setArgument:&argument atIndex:argumentIndex];
+    }
+    va_end(args);
+    return [self p_autoscheduleInvocation:invocation];
+}
+
 #pragma mark - Private
+
+- (RACSignal *)p_autoscheduleInvocation:(NSInvocation *)invocation {
+    return [[[self
+        schedule]
+        flattenMap:^RACSignal *(POSSchedulableObject *this) {
+            [invocation invokeWithTarget:this];
+            RACSignal *signal = invocation.rac_returnValue;
+            POS_CHECK_EX([signal isKindOfClass:[RACSignal class]],
+                         @"%@ does not return RACSignal", NSStringFromSelector(invocation.selector));
+            return signal;
+        }]
+        deliverOn:[RACScheduler currentScheduler]];
+}
 
 - (void)p_protectForScheduler:(RACTargetQueueScheduler *)scheduler
                     predicate:(nullable POSSafetyPredicate)predicate {
@@ -68,6 +99,9 @@ NS_ASSUME_NONNULL_BEGIN
      pos_protectForScheduler:scheduler
      predicate:^BOOL(SEL selector, POSSelectorAttributes attributes) {
          if (pos_protocolContainsSelector(@protocol(POSSchedulable), selector, YES, YES)) {
+             return NO;
+         }
+         if (selector == @selector(p_autoscheduleInvocation:)) {
              return NO;
          }
          return predicate ? predicate(selector, attributes) : YES;
