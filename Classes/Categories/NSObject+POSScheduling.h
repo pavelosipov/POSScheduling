@@ -32,7 +32,7 @@ typedef BOOL (^POSSafetyPredicate)(SEL selector, POSSelectorAttributes attribute
 
 #pragma mark -
 
-FOUNDATION_EXTERN BOOL pos_classContainsSelector(Class aClass, SEL selector);
-FOUNDATION_EXTERN BOOL pos_protocolContainsSelector(Protocol *aProtocol, SEL selector, BOOL isRequiredMethod, BOOL isInstanceMethod);
+FOUNDATION_EXPORT BOOL pos_classContainsSelector(Class aClass, SEL selector);
+FOUNDATION_EXPORT BOOL pos_protocolContainsSelector(Protocol *aProtocol, SEL selector, BOOL isRequiredMethod, BOOL isInstanceMethod);
 
 NS_ASSUME_NONNULL_END
