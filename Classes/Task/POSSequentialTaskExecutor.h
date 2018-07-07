@@ -30,11 +30,13 @@ NS_ASSUME_NONNULL_BEGIN
 /// Tries to execute pending tasks from taskQueue.
 - (void)executePendingTasks;
 
+/// @param taskQueue If nil then default FIFO queue will be used.
 - (instancetype)initWithScheduler:(RACTargetQueueScheduler *)scheduler
-                        taskQueue:(id<POSTaskQueue>)taskQueue;
+                        taskQueue:(nullable id<POSTaskQueue>)taskQueue;
 
+/// @param taskQueue If nil then default FIFO queue will be used.
 - (instancetype)initWithUnderlyingExecutor:(id<POSTaskExecutor>)executor
-                                 taskQueue:(id<POSTaskQueue>)taskQueue NS_DESIGNATED_INITIALIZER;
+                                 taskQueue:(nullable id<POSTaskQueue>)taskQueue NS_DESIGNATED_INITIALIZER;
 
 POS_SCHEDULABLE_INIT_RECURSIVELY_UNAVAILABLE
 

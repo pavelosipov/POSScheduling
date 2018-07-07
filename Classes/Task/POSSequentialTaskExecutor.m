@@ -27,41 +27,32 @@ NS_ASSUME_NONNULL_BEGIN
 
 @implementation POSSequentialTaskExecutor
 
-- (instancetype)initWithScheduler:(RACTargetQueueScheduler *)scheduler {
-    typedef NSMutableArray<POSTask *> Queue_t;
-    return [self
-            initWithUnderlyingExecutor:[[POSDirectTaskExecutor alloc] initWithScheduler:scheduler]
-            taskQueue:
-            [[POSTaskQueueAdapter<Queue_t *> alloc]
-             initWithScheduler:scheduler
-             container:[Queue_t new]
-             dequeueTopTaskBlock:^POSTask *(Queue_t *queue) {
-                 POSTask *task = queue.firstObject;
-                 [queue removeObject:task];
-                 return task;
-             } dequeueTaskBlock:^(Queue_t *queue, POSTask *task) {
-                 [queue removeObject:task];
-             } enqueueTaskBlock:^(Queue_t *queue, POSTask *task) {
-                 [queue addObject:task];
-             }]];
-}
-
 - (instancetype)initWithScheduler:(RACTargetQueueScheduler *)scheduler
-                        taskQueue:(id<POSTaskQueue>)taskQueue {
+                        taskQueue:(nullable id<POSTaskQueue>)taskQueue {
     POS_CHECK(scheduler);
-    POS_CHECK(taskQueue);
     return [self initWithUnderlyingExecutor:[[POSDirectTaskExecutor alloc] initWithScheduler:scheduler]
                                   taskQueue:taskQueue];
 }
 
 - (instancetype)initWithUnderlyingExecutor:(id<POSTaskExecutor>)executor
-                                 taskQueue:(id<POSTaskQueue>)taskQueue {
+                                 taskQueue:(nullable id<POSTaskQueue>)taskQueue {
+    typedef NSMutableArray<POSTask *> Queue_t;
     POS_CHECK(executor);
-    POS_CHECK(taskQueue);
     if (self = [super initWithScheduler:executor.scheduler safetyPredicate:nil]) {
         _executingTasksCountSubject = [RACSubject subject];
         _underlyingExecutor = executor;
-        _pendingTasks = taskQueue;
+        _pendingTasks = taskQueue ?: [[POSTaskQueueAdapter<Queue_t *> alloc]
+                                      initWithScheduler:executor.scheduler
+                                      container:[Queue_t new]
+                                      dequeueTopTaskBlock:^POSTask *(Queue_t *queue) {
+                                          POSTask *task = queue.firstObject;
+                                          [queue removeObject:task];
+                                          return task;
+                                      } dequeueTaskBlock:^(Queue_t *queue, POSTask *task) {
+                                          [queue removeObject:task];
+                                      } enqueueTaskBlock:^(Queue_t *queue, POSTask *task) {
+                                          [queue addObject:task];
+                                      }];
         _maxExecutingTasksCount = 1;
         _mutableExecutingTasks = [NSMutableArray array];
     }
