@@ -27,6 +27,7 @@
 
 @interface SchedulableObject : POSSchedulableObject <SafeProtocol>
 
+@property (nonatomic, readonly) BOOL unsafeMethodWithIntegralResultInvoked;
 @property (nonatomic, readonly) NSInteger unsafeMethodLastArgument;
 
 - (CGSize)preferedSize;

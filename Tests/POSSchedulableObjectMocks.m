@@ -44,6 +44,7 @@
 }
 
 - (NSInteger)unsafeMethodWithIntegralResult {
+    _unsafeMethodWithIntegralResultInvoked = YES;
     return 777;
 }
 

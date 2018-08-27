@@ -105,6 +105,28 @@
     [self waitForExpectationsWithTimeout:1 handler:nil];
 }
 
+- (void)testInvokationOfMethodWithoutArguments {
+    XCTestExpectation *expectation = [self expectationWithDescription:@"e"];
+    SchedulableObject *s = [[SchedulableObject alloc] initWithScheduler:[RACTargetQueueScheduler pos_scheduler]];
+    [s invokeScheduled:@selector(unsafeMethodWithIntegralResult)];
+    [s scheduleBlock:^(SchedulableObject *testingObject) {
+        XCTAssertTrue(s.unsafeMethodWithIntegralResultInvoked);
+        [expectation fulfill];
+    }];
+    [self waitForExpectationsWithTimeout:1 handler:nil];
+}
+
+- (void)testInvokationOfMethodWithArguments {
+    XCTestExpectation *expectation = [self expectationWithDescription:@"e"];
+    SchedulableObject *s = [[SchedulableObject alloc] initWithScheduler:[RACTargetQueueScheduler pos_scheduler]];
+    [s invokeScheduled:@selector(unsafeMethodWithoutResultWithArg:) withArguments:@20, nil];
+    [s scheduleBlock:^(SchedulableObject *testingObject) {
+        XCTAssertTrue(s.unsafeMethodLastArgument == 20);
+        [expectation fulfill];
+    }];
+    [self waitForExpectationsWithTimeout:1 handler:nil];
+}
+
 - (void)testAutoschedulingSynchronousVoidMethod {
     XCTestExpectation *expectation = [self expectationWithDescription:@"e"];
     SchedulableObject *s = [[SchedulableObject alloc] initWithScheduler:[RACTargetQueueScheduler pos_scheduler]];

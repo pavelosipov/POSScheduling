@@ -61,6 +61,29 @@ NS_ASSUME_NONNULL_BEGIN
     }];
 }
 
+- (void)invokeScheduled:(SEL)selector {
+    [self scheduleBlock:^(id<POSSchedulable> this) {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+        [this performSelector:selector];
+#pragma clang diagnostic pop
+    }];
+}
+
+- (void)invokeScheduled:(SEL)selector withArguments:(nullable id)firstArgument, ... {
+    NSInvocation *invocation = [self pos_invocationForSelector:selector];
+    va_list args;
+    va_start(args, firstArgument);
+    NSInteger argumentIndex = 2;
+    for (id argument = firstArgument; argument != nil; argument = va_arg(args, id), ++argumentIndex) {
+        [invocation setArgument:&argument atIndex:argumentIndex];
+    }
+    va_end(args);
+    [self scheduleBlock:^(id<POSSchedulable> this) {
+        [invocation invokeWithTarget:this];
+    }];
+}
+
 - (RACSignal *)autoschedule:(SEL)selector {
     return [self p_autoscheduleInvocation:[self pos_invocationForSelector:selector]];
 }
@@ -109,7 +132,9 @@ NS_ASSUME_NONNULL_BEGIN
          if (pos_protocolContainsSelector(@protocol(POSSchedulable), selector, YES, YES)) {
              return NO;
          }
-         if (selector == @selector(p_autoscheduleInvocation:)) {
+         if (selector == @selector(p_autoscheduleInvocation:) ||
+             selector == @selector(invokeScheduled:) ||
+             selector == @selector(invokeScheduled:withArguments:)) {
              return NO;
          }
          return predicate ? predicate(selector, attributes) : YES;
