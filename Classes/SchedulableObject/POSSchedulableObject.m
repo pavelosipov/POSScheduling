@@ -80,16 +80,24 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark - Private
 
 - (RACSignal *)p_autoscheduleInvocation:(NSInvocation *)invocation {
-    return [[[self
-        schedule]
-        flattenMap:^RACSignal *(POSSchedulableObject *this) {
+    RACSignal *signal = [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber> subscriber) {
+        RACSerialDisposable *disposable = [[RACSerialDisposable alloc] init];
+        [self scheduleBlock:^(id<POSSchedulable> this) {
+            if ([disposable isDisposed]) {
+                return;
+            }
             [invocation invokeWithTarget:this];
-            RACSignal *signal = invocation.rac_returnValue;
-            POS_CHECK_EX([signal isKindOfClass:[RACSignal class]],
-                         @"%@ does not return RACSignal", NSStringFromSelector(invocation.selector));
-            return signal;
-        }]
-        deliverOn:[RACScheduler currentScheduler]];
+            id<NSObject> invokationResult = invocation.rac_returnValue;
+            if ([invokationResult isKindOfClass:[RACSignal class]]) {
+                disposable.disposable = [(RACSignal *)invokationResult subscribe:subscriber];
+            } else {
+                [subscriber sendNext:invokationResult];
+                [subscriber sendCompleted];
+            }
+        }];
+        return disposable;
+    }];
+    return [signal deliverOn:[RACScheduler currentScheduler]];
 }
 
 - (void)p_protectForScheduler:(RACTargetQueueScheduler *)scheduler

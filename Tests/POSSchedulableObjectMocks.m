@@ -31,12 +31,20 @@
     return [RACSignal return:value];
 }
 
-- (RACSignal<NSNumber *> *)unsafeMethodWithArg1:(NSNumber *)arg1
-                                           arg2:(NSNumber *)arg2
-                                           arg3:(NSNumber *)arg3
-                                           arg4:(NSNumber *)arg4
-                                           arg5:(NSNumber *)arg5 {
+- (RACSignal<RACFiveTuple *> *)unsafeMethodWithArg1:(NSNumber *)arg1
+                                               arg2:(NSNumber *)arg2
+                                               arg3:(NSNumber *)arg3
+                                               arg4:(NSNumber *)arg4
+                                               arg5:(NSNumber *)arg5 {
     return [RACSignal return:[RACFiveTuple pack:arg1 :arg2 :arg3 :arg4 :arg5]];
+}
+
+- (void)unsafeMethodWithoutResultWithArg:(NSNumber *)arg {
+    _unsafeMethodLastArgument = arg.integerValue;
+}
+
+- (NSInteger)unsafeMethodWithIntegralResult {
+    return 777;
 }
 
 @end

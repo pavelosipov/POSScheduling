@@ -220,6 +220,7 @@
 				21D2DFD11DC3793000453C50 /* Sources */,
 				21D2DFD21DC3793000453C50 /* Frameworks */,
 				21D2DFD31DC3793000453C50 /* CopyFiles */,
+				C528EA73041AF532C977C831 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -238,6 +239,7 @@
 				21D2DFEA1DC37AAB00453C50 /* Sources */,
 				21D2DFEB1DC37AAB00453C50 /* Frameworks */,
 				21D2DFEC1DC37AAB00453C50 /* Resources */,
+				02145D47C0FDD203C4AF4DC5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -299,6 +301,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		02145D47C0FDD203C4AF4DC5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-All-POSSchedulingTests/Pods-All-POSSchedulingTests-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/POSErrorHandling/POSErrorHandling-Resources.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/POSErrorHandling-Resources.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-All-POSSchedulingTests/Pods-All-POSSchedulingTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		3EA7D24A3DD9B0ED54EE28C9 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -333,6 +353,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C528EA73041AF532C977C831 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-All-POSScheduling/Pods-All-POSScheduling-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/POSErrorHandling/POSErrorHandling-Resources.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/POSErrorHandling-Resources.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-All-POSScheduling/Pods-All-POSScheduling-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
