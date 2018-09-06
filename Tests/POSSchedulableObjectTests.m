@@ -108,7 +108,7 @@
 - (void)testInvokationOfMethodWithoutArguments {
     XCTestExpectation *expectation = [self expectationWithDescription:@"e"];
     SchedulableObject *s = [[SchedulableObject alloc] initWithScheduler:[RACTargetQueueScheduler pos_scheduler]];
-    [s invokeScheduled:@selector(unsafeMethodWithIntegralResult)];
+    [s scheduleSelector:@selector(unsafeMethodWithIntegralResult)];
     [s scheduleBlock:^(SchedulableObject *testingObject) {
         XCTAssertTrue(s.unsafeMethodWithIntegralResultInvoked);
         [expectation fulfill];
@@ -119,7 +119,7 @@
 - (void)testInvokationOfMethodWithArguments {
     XCTestExpectation *expectation = [self expectationWithDescription:@"e"];
     SchedulableObject *s = [[SchedulableObject alloc] initWithScheduler:[RACTargetQueueScheduler pos_scheduler]];
-    [s invokeScheduled:@selector(unsafeMethodWithoutResultWithArg:) withArguments:@20, nil];
+    [s scheduleSelector:@selector(unsafeMethodWithoutResultWithArg:) withArguments:@20, nil];
     [s scheduleBlock:^(SchedulableObject *testingObject) {
         XCTAssertTrue(s.unsafeMethodLastArgument == 20);
         [expectation fulfill];

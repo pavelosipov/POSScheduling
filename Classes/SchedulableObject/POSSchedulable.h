@@ -29,14 +29,14 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)scheduleBlock:(void (^)(id<POSSchedulable> schedulable))block;
 
 ///
-/// @brief   Schedules that object in the object's scheduler and performs selector.
+/// @brief   Schedules that object in the object's scheduler and performs its selector.
 ///
-- (void)invokeScheduled:(SEL)selector;
+- (void)scheduleSelector:(SEL)selector;
 
 ///
-/// @brief   Schedules that object in the object's scheduler and performs selector.
+/// @brief   Schedules that object in the object's scheduler and performs its selector.
 ///
-- (void)invokeScheduled:(SEL)selector withArguments:(nullable id)argument, ... NS_REQUIRES_NIL_TERMINATION;
+- (void)scheduleSelector:(SEL)selector withArguments:(nullable id)argument, ... NS_REQUIRES_NIL_TERMINATION;
 
 ///
 /// @brief   Schedules method invokation of this object in correct sheduler

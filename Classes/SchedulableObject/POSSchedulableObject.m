@@ -10,6 +10,7 @@
 #import "RACTargetQueueScheduler+POSScheduling.h"
 
 #import <ReactiveObjC/NSInvocation+RACTypeParsing.h>
+#import <objc/runtime.h>
 
 #ifndef POS_ENABLE_RUNTIME_CHECKS
 #   ifdef DEBUG
@@ -61,7 +62,7 @@ NS_ASSUME_NONNULL_BEGIN
     }];
 }
 
-- (void)invokeScheduled:(SEL)selector {
+- (void)scheduleSelector:(SEL)selector {
     [self scheduleBlock:^(id<POSSchedulable> this) {
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
@@ -70,13 +71,17 @@ NS_ASSUME_NONNULL_BEGIN
     }];
 }
 
-- (void)invokeScheduled:(SEL)selector withArguments:(nullable id)firstArgument, ... {
+- (void)scheduleSelector:(SEL)selector withArguments:(nullable id)firstArg, ... {
+    static const NSInteger kMaxArgCount = 16;
+    static char argKeys[kMaxArgCount];
     NSInvocation *invocation = [self pos_invocationForSelector:selector];
     va_list args;
-    va_start(args, firstArgument);
-    NSInteger argumentIndex = 2;
-    for (id argument = firstArgument; argument != nil; argument = va_arg(args, id), ++argumentIndex) {
-        [invocation setArgument:&argument atIndex:argumentIndex];
+    va_start(args, firstArg);
+    NSInteger argIndex = 2;
+    for (id arg = firstArg; arg != nil; arg = va_arg(args, id), ++argIndex) {
+        NSParameterAssert(argIndex < kMaxArgCount);
+        [invocation setArgument:&arg atIndex:argIndex];
+        objc_setAssociatedObject(invocation, &argKeys[argIndex], arg, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
     va_end(args);
     [self scheduleBlock:^(id<POSSchedulable> this) {
@@ -88,13 +93,17 @@ NS_ASSUME_NONNULL_BEGIN
     return [self p_autoscheduleInvocation:[self pos_invocationForSelector:selector]];
 }
 
-- (RACSignal *)autoschedule:(SEL)selector withArguments:(nullable id)firstArgument, ... {
+- (RACSignal *)autoschedule:(SEL)selector withArguments:(nullable id)firstArg, ... {
+    static const NSInteger kMaxArgCount = 16;
+    static char argKeys[kMaxArgCount];
     NSInvocation *invocation = [self pos_invocationForSelector:selector];
     va_list args;
-    va_start(args, firstArgument);
-    NSInteger argumentIndex = 2;
-    for (id argument = firstArgument; argument != nil; argument = va_arg(args, id), ++argumentIndex) {
-        [invocation setArgument:&argument atIndex:argumentIndex];
+    va_start(args, firstArg);
+    NSInteger argIndex = 2;
+    for (id arg = firstArg; arg != nil; arg = va_arg(args, id), ++argIndex) {
+        NSParameterAssert(argIndex < kMaxArgCount);
+        [invocation setArgument:&arg atIndex:argIndex];
+        objc_setAssociatedObject(invocation, &argKeys[argIndex], arg, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
     va_end(args);
     return [self p_autoscheduleInvocation:invocation];
@@ -133,8 +142,8 @@ NS_ASSUME_NONNULL_BEGIN
              return NO;
          }
          if (selector == @selector(p_autoscheduleInvocation:) ||
-             selector == @selector(invokeScheduled:) ||
-             selector == @selector(invokeScheduled:withArguments:)) {
+             selector == @selector(scheduleSelector:) ||
+             selector == @selector(scheduleSelector:withArguments:)) {
              return NO;
          }
          return predicate ? predicate(selector, attributes) : YES;
