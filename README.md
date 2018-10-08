@@ -1,8 +1,8 @@
-POSSchedulableObject
+POSScheduling
 ====================
-[![Version](http://img.shields.io/cocoapods/v/POSSchedulableObject.svg)](http://cocoapods.org/?q=POSSchedulableObject)
+[![Version](http://img.shields.io/cocoapods/v/POSScheduling.svg)](http://cocoapods.org/?q=POSSchedulableObject)
 
-Библиотека POSSchedulableObject являет собой пример реализации одноименного паттерна.
+Библиотека POSScheduling являет собой пример реализации одноименного паттерна.
 В таблице ниже приведено соответствие компонентов паттерна и реализующих их механизмов.
 
 | Компонент              | Реализация                                                       |
