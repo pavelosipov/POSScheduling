@@ -46,7 +46,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - POSSchedulable
 
-- (RACSignal<__kindof id<POSSchedulable>> *)schedule {
+- (RACSignal<__kindof id<POSSchedulableObject>> *)schedule {
     return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
         return [self.scheduler schedule:^{
             [subscriber sendNext:self];
@@ -55,7 +55,7 @@ NS_ASSUME_NONNULL_BEGIN
     }];
 }
 
-- (void)scheduleBlock:(void (^)(id<POSSchedulable> schedulable))block {
+- (void)scheduleBlock:(void (^)(__kindof id<POSSchedulableObject> schedulable))block {
     POS_CHECK(block);
     [self.scheduler schedule:^{
         block(self);
@@ -63,7 +63,7 @@ NS_ASSUME_NONNULL_BEGIN
 }
 
 - (void)scheduleSelector:(SEL)selector {
-    [self scheduleBlock:^(id<POSSchedulable> this) {
+    [self scheduleBlock:^(id<POSSchedulableObject> this) {
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
         [this performSelector:selector];
@@ -84,7 +84,7 @@ NS_ASSUME_NONNULL_BEGIN
         objc_setAssociatedObject(invocation, &argKeys[argIndex], arg, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
     va_end(args);
-    [self scheduleBlock:^(id<POSSchedulable> this) {
+    [self scheduleBlock:^(id<POSSchedulableObject> this) {
         [invocation invokeWithTarget:this];
     }];
 }
@@ -114,7 +114,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (RACSignal *)p_autoscheduleInvocation:(NSInvocation *)invocation {
     RACSignal *signal = [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber> subscriber) {
         RACSerialDisposable *disposable = [[RACSerialDisposable alloc] init];
-        [self scheduleBlock:^(id<POSSchedulable> this) {
+        [self scheduleBlock:^(id<POSSchedulableObject> this) {
             if ([disposable isDisposed]) {
                 return;
             }
@@ -138,12 +138,10 @@ NS_ASSUME_NONNULL_BEGIN
     [self
      pos_protectForScheduler:scheduler
      predicate:^BOOL(SEL selector, POSSelectorAttributes attributes) {
-         if (pos_protocolContainsSelector(@protocol(POSSchedulable), selector, YES, YES)) {
+         if (pos_protocolContainsSelector(@protocol(POSSchedulableObject), selector, YES, YES)) {
              return NO;
          }
-         if (selector == @selector(p_autoscheduleInvocation:) ||
-             selector == @selector(scheduleSelector:) ||
-             selector == @selector(scheduleSelector:withArguments:)) {
+         if (selector == @selector(p_autoscheduleInvocation:)) {
              return NO;
          }
          return predicate ? predicate(selector, attributes) : YES;

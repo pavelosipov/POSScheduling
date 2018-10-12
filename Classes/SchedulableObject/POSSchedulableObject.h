@@ -12,7 +12,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface POSSchedulableObject : NSObject <POSSchedulable>
+@interface POSSchedulableObject : NSObject <POSSchedulableObject>
 
 /// Schedules object inside main thread scheduler with default protection options.
 - (instancetype)init;

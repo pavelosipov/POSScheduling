@@ -30,7 +30,7 @@ Dropbox, после чего выводит на экран имя и фамил
 
 ```objective-c
 /// Providers info about account.
-@protocol SODAccountInfoProvider <POSSchedulable>
+@protocol SODAccountInfoProvider <POSSchedulableObject>
 /// @return Signal of nonnull SODAccountInfo.
 - (RACSignal *)fetchAccountInfo;
 @end
@@ -61,7 +61,7 @@ Dropbox, после чего выводит на экран имя и фамил
 настройками исключений.
 
 ```objective-c
-@interface POSSchedulableObject : NSObject <POSSchedulable>
+@interface POSSchedulableObject : NSObject <POSSchedulableObject>
 
 /// Schedules object inside main thread scheduler.
 - (instancetype)init;
@@ -124,7 +124,7 @@ Assembly имел асинхронную природу.
 Создание объектов выглядит примерно следующим образом:
 
 ```objective-c
-@protocol SODAccountAssembly <POSSchedulable>
+@protocol SODAccountAssembly <POSSchedulableObject>
 // ...
 @property (nonatomic, readonly) id<SODAccountInfoProvider> accountInfoProvider;
 @property (nonatomic, readonly) id<SODNodeRepository> nodeRepository;

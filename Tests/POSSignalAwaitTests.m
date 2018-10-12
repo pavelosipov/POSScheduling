@@ -10,7 +10,7 @@
 #import <POSAllocationTracker/POSAllocationTracker.h>
 #import <XCTest/XCTest.h>
 
-@protocol POSFoo <POSSchedulable>
+@protocol POSFoo <POSSchedulableObject>
 @property (nonatomic) NSString *value;
 @end
 

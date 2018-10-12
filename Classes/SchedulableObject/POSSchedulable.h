@@ -18,24 +18,20 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, readonly) RACTargetQueueScheduler *scheduler;
 
-///
+@end
+
+@protocol POSSchedulableObject <POSSchedulable>
+
 /// @return  Signal with this nonnull object delivered in the object's scheduler.
-///
-- (RACSignal<__kindof id<POSSchedulable>> *)schedule;
+- (RACSignal<__kindof id<POSSchedulableObject>> *)schedule;
 
-///
-/// @brief   Schedules that object in the object's scheduler.
-///
-- (void)scheduleBlock:(void (^)(id<POSSchedulable> schedulable))block;
+/// Schedules that object in the object's scheduler.
+- (void)scheduleBlock:(void (^)(__kindof id<POSSchedulableObject> schedulable))block;
 
-///
-/// @brief   Schedules that object in the object's scheduler and performs its selector.
-///
+/// Schedules that object in the object's scheduler and performs its selector.
 - (void)scheduleSelector:(SEL)selector;
 
-///
-/// @brief   Schedules that object in the object's scheduler and performs its selector.
-///
+/// Schedules that object in the object's scheduler and performs its selector.
 - (void)scheduleSelector:(SEL)selector withArguments:(nullable id)argument, ... NS_REQUIRES_NIL_TERMINATION;
 
 ///

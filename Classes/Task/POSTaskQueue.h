@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@protocol POSTaskQueue <POSSchedulable>
+@protocol POSTaskQueue <POSSchedulableObject>
 
 - (nullable POSTask *)dequeueTopTask;
 - (void)dequeueTask:(POSTask *)task;

@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol POSTaskExecutor;
 
 /// Task represents restartable and cancelable unit of work.
-@protocol POSTask <POSSchedulable>
+@protocol POSTask <POSSchedulableObject>
 
 /// Emits YES when task is about to start and NO when task is about to finish.
 /// Always emits some value on subscription.
@@ -74,7 +74,7 @@ POS_SCHEDULABLE_INIT_RECURSIVELY_UNAVAILABLE
 #pragma mark -
 
 /// Specifies protocol which should be impleme
-@protocol POSTaskExecutor <POSSchedulable>
+@protocol POSTaskExecutor <POSSchedulableObject>
 
 /// @return Signal which will emit emits values about task execution.
 - (RACSignal *)submitTask:(POSTask *)task;
@@ -86,7 +86,7 @@ POS_SCHEDULABLE_INIT_RECURSIVELY_UNAVAILABLE
 
 #pragma mark -
 
-@protocol POSBlockExecutor <POSSchedulable>
+@protocol POSBlockExecutor <POSSchedulableObject>
 
 /// @return Signal which will emit emits values about task execution.
 - (RACSignal *)submitExecutionBlock:(RACSignal *(^)(id task))executionBlock;

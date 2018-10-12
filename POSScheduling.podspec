@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'POSScheduling'
-  s.version      = '2.0.0'
+  s.version      = '3.0.0'
   s.license      = 'MIT'
   s.summary      = 'Objective-C implementation of SchedulableObject pattern.'
   s.homepage     = 'https://github.com/pavelosipov/POSScheduling'
