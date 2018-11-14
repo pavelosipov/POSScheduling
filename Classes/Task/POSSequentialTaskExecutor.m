@@ -121,31 +121,30 @@ NS_ASSUME_NONNULL_BEGIN
         task.pos_subscriber = nil;
         @weakify(self);
         @weakify(task);
-        RACCompoundDisposable *reclaimDisposable = [RACCompoundDisposable compoundDisposable];
-        RACDisposable *executeDisposable =
-        [[[_underlyingExecutor submitTask:task]
-          takeUntil:self.rac_willDeallocSignal]
-         subscribeNext:^(id value) {
-             [taskSubscriber sendNext:value];
-         } error:^(NSError *error) {
-             @strongify(task);
-             [task.pos_reclaimDisposable dispose];
-             [taskSubscriber sendError:error];
-         } completed:^{
-             @strongify(task);
-             [task.pos_reclaimDisposable dispose];
-             [taskSubscriber sendCompleted];
-         }];
-        [reclaimDisposable addDisposable:executeDisposable];
-        [reclaimDisposable addDisposable:[RACDisposable disposableWithBlock:^{
+        [[[_underlyingExecutor
+            submitTask:task]
+            takeUntil:self.rac_willDeallocSignal]
+            subscribeNext:^(id value) {
+                [taskSubscriber sendNext:value];
+            }
+            error:^(NSError *error) {
+                @strongify(task);
+                [task.pos_reclaimDisposable dispose];
+                [taskSubscriber sendError:error];
+            }
+            completed:^{
+                @strongify(task);
+                [task.pos_reclaimDisposable dispose];
+                [taskSubscriber sendCompleted];
+            }];
+        task.pos_reclaimDisposable = [RACDisposable disposableWithBlock:^{
             @strongify(self);
             @strongify(task);
             task.pos_reclaimDisposable = nil;
             [self p_removeExecutingTask:task];
             [self.underlyingExecutor reclaimTask:task];
             [self p_scheduleProcessPendingTasks];
-        }]];
-        task.pos_reclaimDisposable = reclaimDisposable;
+        }];
     }
 }
 

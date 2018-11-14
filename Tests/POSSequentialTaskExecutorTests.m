@@ -78,6 +78,16 @@
     [self waitForExpectationsWithTimeout:1 handler:nil];
 }
 
+- (void)testExecutorExecutionBlockShouldEmitExecutionCompletion {
+    XCTestExpectation *expectation = [self expectationWithDescription:@"e"];
+    [[_executor submitExecutionBlock:^RACSignal *(id _) {
+        return [RACSignal empty];
+    }] subscribeCompleted:^{
+        [expectation fulfill];
+    }];
+    [self waitForExpectationsWithTimeout:1 handler:nil];
+}
+
 - (void)testExecutorSubmitSignalShouldEmitTaskExecutionErrors {
     XCTestExpectation *expectation = [self expectationWithDescription:@"e"];
     POSTask *task = [POSTask createTask:^RACSignal *(id task) {
