@@ -14,6 +14,13 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+static char kPOSSchedulerQueueKey;
+
+NS_INLINE RACScheduler * _Nullable POSCurrentScheduler() {
+    RACScheduler *queueScheduler = (__bridge RACScheduler *)dispatch_get_specific(&kPOSSchedulerQueueKey);
+    return queueScheduler ?: [RACScheduler currentScheduler];
+}
+
 typedef void (^POSSelectorEnumerationBlock)(SEL selector, POSSelectorAttributes attributes);
 static void pos_enumerateSelectors(Class aClass, POSSelectorEnumerationBlock block);
 
@@ -23,6 +30,36 @@ static BOOL pos_isHooksIncompatibleSelector(Class aClass, SEL selector);
 #pragma mark -
 
 @implementation NSObject (POSScheduling)
+
+- (NSInvocation *)pos_invocationForSelector:(SEL)selector {
+    POS_CHECK(selector != NULL);
+    NSMethodSignature *methodSignature = [self methodSignatureForSelector:selector];
+    POS_CHECK_EX(methodSignature != nil, @"%@ does not respond to %@", self, NSStringFromSelector(selector));
+    NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:methodSignature];
+    invocation.selector = selector;
+    invocation.target = self;
+    return invocation;
+}
+
+- (RACSignal *)pos_deallocSignalOnScheduler:(RACScheduler *)scheduler {
+    RACSignal *signal = objc_getAssociatedObject(self, _cmd);
+    if (signal != nil) {
+        return signal;
+    }
+    RACReplaySubject *subject = [RACReplaySubject subject];
+    [self.rac_deallocDisposable addDisposable:[RACDisposable disposableWithBlock:^{
+        RACScheduler *currentScheduler = POSCurrentScheduler();
+        if (currentScheduler == scheduler) {
+            [subject sendCompleted];
+        } else {
+            [scheduler schedule:^{
+                [subject sendCompleted];
+            }];
+        }
+    }]];
+    objc_setAssociatedObject(self, _cmd, subject, OBJC_ASSOCIATION_RETAIN);
+    return subject;
+}
 
 - (void)pos_protectForScheduler:(RACTargetQueueScheduler *)scheduler
                       predicate:(nullable POSSafetyPredicate)outerPredicate {
@@ -43,8 +80,7 @@ static BOOL pos_isHooksIncompatibleSelector(Class aClass, SEL selector);
 - (void)p_pos_protectForScheduler:(RACTargetQueueScheduler *)scheduler
                         predicate:(POSSafetyPredicate)predicate {
     POS_CHECK(scheduler);
-    static char kSchedulerKey;
-    dispatch_queue_set_specific(scheduler.queue, &kSchedulerKey, (__bridge void *)scheduler, NULL);
+    dispatch_queue_set_specific(scheduler.queue, &kPOSSchedulerQueueKey, (__bridge void *)scheduler, NULL);
     pos_enumerateSelectors(self.class, ^(SEL selector, POSSelectorAttributes attributes) {
         if (!predicate(selector, attributes)) return;
         NSError *error;
@@ -54,24 +90,13 @@ static BOOL pos_isHooksIncompatibleSelector(Class aClass, SEL selector);
             withOptions:AspectPositionBefore
             usingBlock:^(id<AspectInfo> aspectInfo) {
                 @strongify(self);
-                RACScheduler *queueScheduler = (__bridge RACScheduler *)dispatch_get_specific(&kSchedulerKey);
-                RACScheduler *currentScheduler = queueScheduler ?: [RACScheduler currentScheduler];
-                POS_CHECK_EX(!(aspectInfo.instance == self && currentScheduler != scheduler),
+                RACScheduler *currentScheduler = POSCurrentScheduler();
+                POS_CHECK_EX(currentScheduler == scheduler,
                              @"Incorrect scheduler to invoke '%@'.", NSStringFromSelector(selector));
             }
             error:&error];
         POS_CHECK_EX(hooked, error.localizedDescription);
     });
-}
-
-- (NSInvocation *)pos_invocationForSelector:(SEL)selector {
-    POS_CHECK(selector != NULL);
-    NSMethodSignature *methodSignature = [self methodSignatureForSelector:selector];
-    POS_CHECK_EX(methodSignature != nil, @"%@ does not respond to %@", self, NSStringFromSelector(selector));
-    NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:methodSignature];
-    invocation.selector = selector;
-    invocation.target = self;
-    return invocation;
 }
 
 @end

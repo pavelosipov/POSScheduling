@@ -340,4 +340,26 @@
     [self waitForExpectationsWithTimeout:1 handler:nil];
 }
 
+- (void)testExecutorShouldReclaimTaskOnCorrectSchedulerWhenDeallocating {
+    XCTestExpectation *expectation = [self expectationWithDescription:@"e"];
+    RACTargetQueueScheduler *scheduler = [RACTargetQueueScheduler pos_scheduler];
+    self.executor = [[POSSequentialTaskExecutor alloc] initWithScheduler:scheduler taskQueue:nil];
+    @weakify(expectation);
+    POSTask *task = [POSTask createTask:^RACSignal *(id task) {
+        return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+            return [RACDisposable disposableWithBlock:^{
+                @strongify(expectation);
+                [expectation fulfill];
+            }];
+        }];
+    } scheduler:scheduler];
+    [_executor scheduleSelector:@selector(submitTask:) withArguments:task, nil];
+    [scheduler schedule:^{ [scheduler schedule:^{ [scheduler schedule:^{
+        [[RACScheduler mainThreadScheduler] schedule:^{
+            self.executor = nil;
+        }];
+    }];}];}];
+    [self waitForExpectationsWithTimeout:2 handler:nil];
+}
+
 @end

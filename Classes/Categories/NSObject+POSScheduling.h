@@ -28,6 +28,8 @@ typedef BOOL (^POSSafetyPredicate)(SEL selector, POSSelectorAttributes attribute
 
 - (NSInvocation *)pos_invocationForSelector:(SEL)selector;
 
+- (RACSignal *)pos_deallocSignalOnScheduler:(RACScheduler *)scheduler;
+
 @end
 
 #pragma mark -

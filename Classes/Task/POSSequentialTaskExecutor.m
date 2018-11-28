@@ -123,7 +123,7 @@ NS_ASSUME_NONNULL_BEGIN
         @weakify(task);
         [[[_underlyingExecutor
             submitTask:task]
-            takeUntil:self.rac_willDeallocSignal]
+            takeUntil:[self pos_deallocSignalOnScheduler:self.scheduler]]
             subscribeNext:^(id value) {
                 [taskSubscriber sendNext:value];
             }
