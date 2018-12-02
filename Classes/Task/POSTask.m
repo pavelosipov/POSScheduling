@@ -164,7 +164,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (RACSignal *)submitExecutionBlock:(RACSignal *(^)(id _))executionBlock {
     POS_CHECK([self conformsToProtocol:@protocol(POSTaskExecutor)]);
     id<POSTaskExecutor> taskExecutor = (id)self;
-    return [taskExecutor submitTask:[POSTask createTask:executionBlock scheduler:self.scheduler executor:taskExecutor]];
+    return [taskExecutor submitTask:[POSTask createTask:executionBlock scheduler:self.scheduler]];
 }
 
 @end
