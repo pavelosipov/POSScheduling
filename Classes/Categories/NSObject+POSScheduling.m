@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 static char kPOSSchedulerQueueKey;
 
-NS_INLINE RACScheduler * _Nullable POSCurrentScheduler() {
+RACScheduler * _Nullable POSCurrentScheduler(void) {
     RACScheduler *queueScheduler = (__bridge RACScheduler *)dispatch_get_specific(&kPOSSchedulerQueueKey);
     return queueScheduler ?: [RACScheduler currentScheduler];
 }
@@ -90,9 +90,8 @@ static BOOL pos_isHooksIncompatibleSelector(Class aClass, SEL selector);
             withOptions:AspectPositionBefore
             usingBlock:^(id<AspectInfo> aspectInfo) {
                 @strongify(self);
-                RACScheduler *currentScheduler = POSCurrentScheduler();
-                POS_CHECK_EX(currentScheduler == scheduler,
-                             @"Incorrect scheduler to invoke '%@'.", NSStringFromSelector(selector));
+                POS_CHECK_EX(POSCurrentScheduler() == scheduler,
+                             @"Unexpected scheduler to send %@ to %@.", NSStringFromSelector(selector), self);
             }
             error:&error];
         POS_CHECK_EX(hooked, error.localizedDescription);

@@ -12,12 +12,6 @@
 #import <ReactiveObjC/NSInvocation+RACTypeParsing.h>
 #import <objc/runtime.h>
 
-#ifndef POS_ENABLE_RUNTIME_CHECKS
-#   ifdef DEBUG
-#       define POS_ENABLE_RUNTIME_CHECKS 1
-#   endif
-#endif
-
 NS_ASSUME_NONNULL_BEGIN
 
 @interface POSSchedulableObject ()
@@ -112,24 +106,24 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark - Private
 
 - (RACSignal *)p_autoscheduleInvocation:(NSInvocation *)invocation {
+    @weakify(self);
     RACSignal *signal = [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber> subscriber) {
-        RACSerialDisposable *disposable = [[RACSerialDisposable alloc] init];
-        [self scheduleBlock:^(id<POSSchedulableObject> this) {
-            if ([disposable isDisposed]) {
-                return;
-            }
-            [invocation invokeWithTarget:this];
-            id<NSObject> invokationResult = invocation.rac_returnValue;
-            if ([invokationResult isKindOfClass:[RACSignal class]]) {
-                disposable.disposable = [(RACSignal *)invokationResult subscribe:subscriber];
-            } else {
-                [subscriber sendNext:invokationResult];
-                [subscriber sendCompleted];
-            }
-        }];
-        return disposable;
+        @strongify(self);
+        if (!self) {
+            [subscriber sendCompleted];
+            return nil;
+        }
+        [invocation invokeWithTarget:self];
+        id<NSObject> invokationResult = invocation.rac_returnValue;
+        if ([invokationResult isKindOfClass:[RACSignal class]]) {
+            return [(RACSignal *)invokationResult subscribe:subscriber];
+        } else {
+            [subscriber sendNext:invokationResult];
+            [subscriber sendCompleted];
+            return nil;
+        }
     }];
-    return [signal deliverOn:[RACScheduler currentScheduler]];
+    return [[signal subscribeOn:self.scheduler] deliverOn:POSCurrentScheduler()];
 }
 
 - (void)p_protectForScheduler:(RACTargetQueueScheduler *)scheduler
