@@ -121,7 +121,7 @@ NS_ASSUME_NONNULL_BEGIN
         task.pos_subscriber = nil;
         @weakify(self);
         @weakify(task);
-        [[[_underlyingExecutor
+        RACDisposable *executionDisposable = [[[_underlyingExecutor
             submitTask:task]
             takeUntil:[self pos_deallocSignalOnScheduler:self.scheduler]]
             subscribeNext:^(id value) {
@@ -141,6 +141,7 @@ NS_ASSUME_NONNULL_BEGIN
             @strongify(self);
             @strongify(task);
             task.pos_reclaimDisposable = nil;
+            [executionDisposable dispose];
             [self p_removeExecutingTask:task];
             [self.underlyingExecutor reclaimTask:task];
             [self p_scheduleProcessPendingTasks];
