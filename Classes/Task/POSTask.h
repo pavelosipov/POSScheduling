@@ -35,7 +35,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)cancel;
 
 /// Interrupts task and emits error.
-- (void)cancelWithError:(NSError *)error;
+- (void)cancelWithError:(nullable NSError *)error;
 
 @end
 
@@ -80,7 +80,7 @@ POS_SCHEDULABLE_INIT_RECURSIVELY_UNAVAILABLE
 - (RACSignal *)submitTask:(POSTask *)task;
 
 /// Prevents task execution if it doesn't executed yet.
-- (void)reclaimTask:(POSTask *)task;
+- (void)reclaimTask:(POSTask *)task error:(nullable NSError *)error;
 
 @end
 

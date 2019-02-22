@@ -93,17 +93,16 @@ NS_ASSUME_NONNULL_BEGIN
 }
 
 - (void)cancel {
+    [self cancelWithError:nil];
+}
+
+- (void)cancelWithError:(nullable NSError *)error {
+    [_extraErrors sendNext:error];
     if (_executor) {
-        [_executor reclaimTask:self];
+        [_executor reclaimTask:self error:error];
     } else {
         [self p_cancelNow];
     }
-}
-
-- (void)cancelWithError:(NSError *)error {
-    POS_CHECK(error);
-    [_extraErrors sendNext:error];
-    [self cancel];
 }
 
 #pragma mark Properties
@@ -177,7 +176,7 @@ NS_ASSUME_NONNULL_BEGIN
     return [task p_executeNow];
 }
 
-- (void)reclaimTask:(POSTask *)task {
+- (void)reclaimTask:(POSTask *)task error:(nullable NSError *)error {
     [task p_cancelNow];
 }
 

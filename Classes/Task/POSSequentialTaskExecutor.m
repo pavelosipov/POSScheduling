@@ -11,18 +11,26 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef void (^POSReclaimBlock)(NSError * _Nullable error);
+
 @interface POSTask (POSConcurrentTaskExecutor)
+
 @property (nonatomic, nullable, setter = pos_setSubscriber:) id<RACSubscriber> pos_subscriber;
-@property (nonatomic, nullable, setter = pos_setReclaimDisposable:) RACDisposable *pos_reclaimDisposable;
+@property (nonatomic, nullable, setter = pos_setReclaimBlock:) POSReclaimBlock pos_reclaimBlock;
+
+- (void)pos_reclaimWithError:(nullable NSError *)error;
+
 @end
 
 #pragma mark -
 
 @interface POSSequentialTaskExecutor ()
+
 @property (nonatomic, readonly) id<POSTaskExecutor> underlyingExecutor;
 @property (nonatomic, readonly) id<POSTaskQueue> pendingTasks;
 @property (nonatomic, readonly) NSMutableArray<id<POSTask>> *mutableExecutingTasks;
 @property (nonatomic, readonly) RACSubject *executingTasksCountSubject;
+
 @end
 
 @implementation POSSequentialTaskExecutor
@@ -63,29 +71,29 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (RACSignal *)submitTask:(POSTask *)task {
     POS_CHECK(![task isExecuting]);
-    POS_CHECK(task.pos_reclaimDisposable == nil);
+    POS_CHECK(task.pos_reclaimBlock == nil);
     RACSignal *executeSignal = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
         task.pos_subscriber = subscriber;
         return [RACDisposable disposableWithBlock:^{
-            [task.pos_reclaimDisposable dispose];
+            [task pos_reclaimWithError:nil];
         }];
     }];
     [_pendingTasks enqueueTask:task];
     @weakify(self);
     @weakify(task);
-    task.pos_reclaimDisposable = [RACDisposable disposableWithBlock:^{
+    task.pos_reclaimBlock = ^(NSError * _Nullable error) {
         @strongify(self);
         @strongify(task);
-        task.pos_reclaimDisposable = nil;
+        task.pos_reclaimBlock = nil;
         task.pos_subscriber = nil;
         [self.pendingTasks dequeueTask:task];
-    }];
+    };
     [self p_scheduleProcessPendingTasks];
     return executeSignal;
 }
 
-- (void)reclaimTask:(POSTask *)task {
-    [task.pos_reclaimDisposable dispose];
+- (void)reclaimTask:(POSTask *)task error:(nullable NSError *)error {
+    [task pos_reclaimWithError:error];
 }
 
 #pragma mark Public
@@ -129,31 +137,27 @@ NS_ASSUME_NONNULL_BEGIN
             }
             error:^(NSError *error) {
                 @strongify(task);
-                [task.pos_reclaimDisposable dispose];
+                [task pos_reclaimWithError:error];
                 [taskSubscriber sendError:error];
             }
             completed:^{
                 @strongify(task);
-                [task.pos_reclaimDisposable dispose];
+                [task pos_reclaimWithError:nil];
                 [taskSubscriber sendCompleted];
             }];
-        task.pos_reclaimDisposable = [RACDisposable disposableWithBlock:^{
+        task.pos_reclaimBlock = ^(NSError * _Nullable error) {
             @strongify(self);
             @strongify(task);
-            task.pos_reclaimDisposable = nil;
+            task.pos_reclaimBlock = nil;
             [executionDisposable dispose];
             [self p_removeExecutingTask:task];
-            [self.underlyingExecutor reclaimTask:task];
+            [self.underlyingExecutor reclaimTask:task error:error];
             [self p_scheduleProcessPendingTasks];
-        }];
+        };
     }
 }
 
 #pragma mark Private
-
-- (void)p_reclaimTask:(POSTask *)task {
-    [task.pos_reclaimDisposable dispose];
-}
 
 - (void)p_scheduleProcessPendingTasks {
     [[self schedule] subscribeNext:^(POSSequentialTaskExecutor *this) {
@@ -176,9 +180,15 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark -
 
 static char kPOSTaskSubscriberKey;
-static char kPOSTaskReclaimDisposableKey;
+static char kPOSTaskReclaimBlockKey;
 
 @implementation POSTask (POSConcurrentTaskExecutor)
+
+- (void)pos_reclaimWithError:(nullable NSError *)error {
+    if (self.pos_reclaimBlock) {
+        self.pos_reclaimBlock(error);
+    }
+}
 
 - (nullable id<RACSubscriber>)pos_subscriber {
     return objc_getAssociatedObject(self, &kPOSTaskSubscriberKey);
@@ -188,12 +198,12 @@ static char kPOSTaskReclaimDisposableKey;
     objc_setAssociatedObject(self, &kPOSTaskSubscriberKey, subscriber, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-- (nullable RACDisposable *)pos_reclaimDisposable {
-    return objc_getAssociatedObject(self, &kPOSTaskReclaimDisposableKey);
+- (nullable POSReclaimBlock)pos_reclaimBlock {
+    return objc_getAssociatedObject(self, &kPOSTaskReclaimBlockKey);
 }
 
-- (void)pos_setReclaimDisposable:(nullable RACDisposable *)disposable {
-    objc_setAssociatedObject(self, &kPOSTaskReclaimDisposableKey, disposable, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+- (void)pos_setReclaimBlock:(nullable POSReclaimBlock)block {
+    objc_setAssociatedObject(self, &kPOSTaskReclaimBlockKey, block, OBJC_ASSOCIATION_COPY_NONATOMIC);
 }
 
 @end
